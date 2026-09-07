@@ -5,7 +5,7 @@ description: Locate and fetch the current Freedom upgrade ledger. The full ledge
 
 # Freedom Upgrade Ledger — version index
 
-**Latest version: v4.160.0**
+**Latest version: v4.161.0**
 
 This file is public on purpose, and it is deliberately thin.
 
@@ -245,3 +245,4 @@ order.
 ### → v4.158.0 (setting up becomes a page you can look at)
 ### → v4.159.0 (the session you started on your phone is waiting when you sit down)
 ### → v4.160.0 (activation leaves a report behind, automatically)
+### → v4.161.0 (the standup walk renders again, and every card offers your own answer)
