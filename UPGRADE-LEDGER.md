@@ -5,7 +5,7 @@ description: Locate and fetch the current Freedom upgrade ledger. The full ledge
 
 # Freedom Upgrade Ledger — version index
 
-**Latest version: v4.177.0**
+**Latest version: v4.178.0**
 
 This file is public on purpose, and it is deliberately thin.
 
@@ -262,3 +262,4 @@ order.
 ### → v4.175.0 (your Messages mirror can lose the newest messages, and on a clean install it never refreshes at all)
 ### → v4.176.0 (the worktree gate watched one of two doors)
 ### → v4.177.0 (activation said your identity was installed and never said where it applies)
+### → v4.178.0 (the save now tells you what the session says should change)
