@@ -5,7 +5,7 @@ description: Locate and fetch the current Freedom upgrade ledger. The full ledge
 
 # Freedom Upgrade Ledger — version index
 
-**Latest version: v4.164.0**
+**Latest version: v4.165.0**
 
 This file is public on purpose, and it is deliberately thin.
 
@@ -249,3 +249,4 @@ order.
 ### → v4.162.0 (a granted Google scope is not an enabled API, and now something checks)
 ### → v4.163.0 (the morning's housekeeping happens overnight, the terminal gets a voice check, and your asks become a spectrum)
 ### → v4.164.0 (onboarding no longer waits behind its imports)
+### → v4.165.0 (a blocked read is not a verdict)
