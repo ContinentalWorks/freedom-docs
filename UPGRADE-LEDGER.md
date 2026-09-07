@@ -5,7 +5,7 @@ description: Locate and fetch the current Freedom upgrade ledger. The full ledge
 
 # Freedom Upgrade Ledger — version index
 
-**Latest version: v4.175.0**
+**Latest version: v4.176.0**
 
 This file is public on purpose, and it is deliberately thin.
 
@@ -260,3 +260,4 @@ order.
 ### → v4.173.0 (an offer you have to type an answer to is a question, however politely it is worded)
 ### → v4.174.0 (a shared projects root that stopped resolving now says so)
 ### → v4.175.0 (your Messages mirror can lose the newest messages, and on a clean install it never refreshes at all)
+### → v4.176.0 (the worktree gate watched one of two doors)
