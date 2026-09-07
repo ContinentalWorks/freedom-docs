@@ -5,7 +5,7 @@ description: Locate and fetch the current Freedom upgrade ledger. The full ledge
 
 # Freedom Upgrade Ledger — version index
 
-**Latest version: v4.180.0**
+**Latest version: v4.181.0**
 
 This file is public on purpose, and it is deliberately thin.
 
@@ -265,3 +265,4 @@ order.
 ### → v4.178.0 (the save now tells you what the session says should change)
 ### → v4.179.0 (a person at the keyboard is asked at the keyboard)
 ### → v4.180.0 (a generated workspace gets the merge base it never had)
+### → v4.181.0 (the new-project door asks blind)
