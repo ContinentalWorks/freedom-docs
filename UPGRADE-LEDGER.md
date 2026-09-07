@@ -5,7 +5,7 @@ description: Locate and fetch the current Freedom upgrade ledger. The full ledge
 
 # Freedom Upgrade Ledger — version index
 
-**Latest version: v4.156.0**
+**Latest version: v4.157.0**
 
 This file is public on purpose, and it is deliberately thin.
 
@@ -241,3 +241,4 @@ order.
 ### → v4.154.0 (the skin's light half: white like apple.com, navy when the phone is dark)
 ### → v4.155.0 (end-a-session can end the tab it was said in)
 ### → v4.156.0 The standup
+### → v4.157.0 (a finished session closes itself, and the burst becomes tabs)
