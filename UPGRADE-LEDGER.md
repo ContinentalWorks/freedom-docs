@@ -5,7 +5,7 @@ description: Locate and fetch the current Freedom upgrade ledger. The full ledge
 
 # Freedom Upgrade Ledger — version index
 
-**Latest version: v4.169.0**
+**Latest version: v4.170.0**
 
 This file is public on purpose, and it is deliberately thin.
 
@@ -254,3 +254,4 @@ order.
 ### → v4.167.0 (a question that deletes itself)
 ### → v4.168.0 (your own checks can change what you are offered, and hooks fire whether or not a skill remembers)
 ### → v4.169.0 (the skill asks the tool, not you)
+### → v4.170.0 (an invite that worked now makes a sound)
