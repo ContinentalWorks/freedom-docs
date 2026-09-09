@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.212.0**
+**Latest version: v4.213.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -319,3 +319,4 @@ Newest last.
 ### → v4.210.0 (a permission an update threw away now says so)
 ### → v4.211.0 (a CLI reached through a symlink did nothing and exited 0)
 ### → v4.212.0 (the checkpoint gate stops arguing you into the bug it exists to prevent)
+### → v4.213.0 (the agent stops being the one who remembers what it did)
