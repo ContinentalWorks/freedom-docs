@@ -20,7 +20,7 @@ the client repo because that access is how Freedom is installed in the first pla
 ## Getting the full ledger
 
 ```bash
-gh api repos/SupersuitUp/freedom/contents/UPGRADE-LEDGER.md \
+gh api repos/ContinentalWorks/freedom/contents/UPGRADE-LEDGER.md \
   -H "Accept: application/vnd.github.raw"
 ```
 
@@ -28,7 +28,7 @@ If that returns 404, the GitHub account you are authenticated as is not a Freedo
 the wall, and it is the only one — nothing here is obfuscated, and the skills themselves are
 plain markdown on your own disk once installed.
 
-Not a client yet: https://github.com/SupersuitUp/freedom
+Not a client yet: https://github.com/ContinentalWorks/freedom
 
 ## Versions
 

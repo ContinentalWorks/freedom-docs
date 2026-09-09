@@ -3,7 +3,7 @@
 The public installers for Freedom.
 
 `bootstrap.sh` and `preflight.sh` are **copies** of the same files in the private
-`SupersuitUp/freedom-workspace-template` repo, published here because the install
+`ContinentalWorks/freedom-dev` repo, published here because the install
 command has to be fetchable by someone who does not yet have access to anything.
 
 That makes this a mirror, and mirrors drift. The last one did: `SupersuitUp/paos-docs`
