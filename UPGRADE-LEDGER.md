@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.207.2**
+**Latest version: v4.208.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -302,3 +302,4 @@ Newest last.
 ### → v4.207.0 (a tab says which project, and the session in it already knows)
 ### → v4.207.1 (the project board cannot be wiped)
 ### → v4.207.2 (a wrong publisher is visible without opening the sidebar)
+### → v4.208.0 (writing down what you were just told is not a permission request)
