@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # bootstrap.sh — gets the agent alive, then gets out of the way.
 #
-# This script does FOUR things: Homebrew, Node + Git, Claude Code, and the
+# This script does FOUR things: Homebrew, Node + Git + jq, Claude Code, and the
 # handoff. Everything else about setting up Freedom — VS Code, the capture
 # stack, the GitHub login, your workspace, the plugin, hourly sync, the
 # launcher — is done afterwards by the agent, following the install skill it
@@ -219,8 +219,12 @@ step_done
 # job. It installs `gh` itself, and can actually recover when the login fails
 # on a managed work device.
 
-step_begin "Node.js and Git (what the harness runs on)"
-for formula in node git; do
+# jq joins node and git because capture depends on it and its absence is SILENT: both
+# readers' sync.sh print "jq: command not found" and exit 0 with an empty result, which
+# reads as a clean "0 new" run. A fresh machine that reaches capture without it gets a
+# relationship manager that reports success and stays empty (#53, @yyabdi).
+step_begin "Node.js, Git and jq (what the harness runs on)"
+for formula in node git jq; do
   if command -v "$formula" >/dev/null 2>&1; then
     echo "    $formula already installed: $("$formula" --version 2>/dev/null | head -1)"
   else
