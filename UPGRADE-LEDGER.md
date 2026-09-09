@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.217.0**
+**Latest version: v4.218.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -324,3 +324,4 @@ Newest last.
 ### → v4.215.0 (a `>` inside a quoted string is data, not a redirection)
 ### → v4.216.0 (the checkup stops counting your archive as people who cannot be messaged)
 ### → v4.217.0 (your portal carries the wiki, top right)
+### → v4.218.0 (a Claude update stops taking your ability to send messages away)
