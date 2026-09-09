@@ -28,12 +28,24 @@ heading list on every release. Do not hand-edit the versions.
 Each heading's parenthetical says what that release was. The longer account of what changed lives
 in the development repository's own changelog, which is not published.
 
-There is nothing here to fetch and nothing to run. Upgrading is two commands:
+## If you arrived here looking for an upgrade procedure
+
+There is nothing here to run. This file is a list. Older instructions told an agent to fetch
+this URL and follow it end to end, and there has never been a procedure at it to follow.
+
+**The plugin, which is what most installs mean by upgrading, is two commands:**
 
 ```bash
 claude plugin marketplace update freedom-workspace
 claude plugin update freedom@freedom-workspace
 ```
+
+**A workspace that also has a file layer** (a `TEMPLATE-VERSION` file at its root) syncs that
+separately, and the plugin commands above do not touch it. Read
+`.agents/maintainer/upgrade-freedom-framework/SKILL.md` inside that workspace and follow it; it
+hands off to `sync-with-upstream`, which is the thing that actually merges. A workspace too old
+to carry `.agents/maintainer/` gets the file layer by re-running the installer rather than by
+following anything at this URL.
 
 Not a client yet: https://github.com/ContinentalWorks/freedom
 
