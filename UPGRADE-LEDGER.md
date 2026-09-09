@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.208.0**
+**Latest version: v4.209.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -258,7 +258,7 @@ Newest last.
 ### → v4.153.0 (the portal: the shared frapp app's first screen)
 ### → v4.154.0 (the skin's light half: white like apple.com, navy when the phone is dark)
 ### → v4.155.0 (end-a-session can end the tab it was said in)
-### → v4.156.0 The Next Step Meeting
+### → v4.156.0 (The Next Step Meeting)
 ### → v4.157.0 (a finished session closes itself, and the burst becomes tabs)
 ### → v4.158.0 (setting up becomes a page you can look at)
 ### → v4.159.0 (the session you started on your phone is waiting when you sit down)
@@ -315,3 +315,4 @@ Newest last.
 ### → v4.207.1 (the project board cannot be wiped)
 ### → v4.207.2 (a wrong publisher is visible without opening the sidebar)
 ### → v4.208.0 (writing down what you were just told is not a permission request)
+### → v4.209.0 (a key that is set is not a key that works)
