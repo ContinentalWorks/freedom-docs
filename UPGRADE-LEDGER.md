@@ -5,7 +5,7 @@ description: Locate and fetch the current Freedom upgrade ledger. The full ledge
 
 # Freedom Upgrade Ledger — version index
 
-**Latest version: v4.197.0**
+**Latest version: v4.198.0**
 
 This file is public on purpose, and it is deliberately thin.
 
@@ -240,12 +240,12 @@ order.
 ### → v4.153.0 (the portal: the shared frapp app's first screen)
 ### → v4.154.0 (the skin's light half: white like apple.com, navy when the phone is dark)
 ### → v4.155.0 (end-a-session can end the tab it was said in)
-### → v4.156.0 The standup
+### → v4.156.0 The Next Step Meeting
 ### → v4.157.0 (a finished session closes itself, and the burst becomes tabs)
 ### → v4.158.0 (setting up becomes a page you can look at)
 ### → v4.159.0 (the session you started on your phone is waiting when you sit down)
 ### → v4.160.0 (activation leaves a report behind, automatically)
-### → v4.161.0 (the standup walk renders again, and every card offers your own answer)
+### → v4.161.0 (the Next Step Meeting walk renders again, and every card offers your own answer)
 ### → v4.162.0 (a granted Google scope is not an enabled API, and now something checks)
 ### → v4.163.0 (the morning's housekeeping happens overnight, the terminal gets a voice check, and your asks become a spectrum)
 ### → v4.164.0 (onboarding no longer waits behind its imports)
@@ -267,7 +267,7 @@ order.
 ### → v4.180.0 (a generated workspace gets the merge base it never had)
 ### → v4.181.0 (the new-project door asks blind)
 ### → v4.182.0 (a session that opens with work knows what the work is)
-### → v4.183.0 (the standup widget)
+### → v4.183.0 (the Next Step Meeting widget)
 ### → v4.184.0 (the report queue, worked to zero)
 ### → v4.184.1 (the gate could not be satisfied)
 ### → v4.184.2 (settled, not merely pressed)
@@ -284,3 +284,4 @@ order.
 ### → v4.195.0 (a refusal that told you nothing about what to do next)
 ### → v4.196.0 (three things that failed by looking like something else)
 ### → v4.197.0 (four things that reported success and had done nothing)
+### → v4.198.0 (the standup is now the Next Step Meeting)
