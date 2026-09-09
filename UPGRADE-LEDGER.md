@@ -5,7 +5,7 @@ description: Locate and fetch the current Freedom upgrade ledger. The full ledge
 
 # Freedom Upgrade Ledger — version index
 
-**Latest version: v4.207.1**
+**Latest version: v4.207.2**
 
 This file is public on purpose, and it is deliberately thin.
 
@@ -295,3 +295,4 @@ order.
 ### → v4.206.0 (the portal wears the Freedom wordmark)
 ### → v4.207.0 (a tab says which project, and the session in it already knows)
 ### → v4.207.1 (the project board cannot be wiped)
+### → v4.207.2 (a wrong publisher is visible without opening the sidebar)
