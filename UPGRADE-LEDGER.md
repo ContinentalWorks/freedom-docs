@@ -5,7 +5,7 @@ description: Locate and fetch the current Freedom upgrade ledger. The full ledge
 
 # Freedom Upgrade Ledger — version index
 
-**Latest version: v4.201.0**
+**Latest version: v4.204.0**
 
 This file is public on purpose, and it is deliberately thin.
 
@@ -288,3 +288,6 @@ order.
 ### → v4.199.0 (your tabs are named after your work, not after your folders)
 ### → v4.200.0 (retiring the pre-rename widget reaches all of it)
 ### → v4.201.0 (your agent can see your screen)
+### → v4.202.0 (the return trip is checked for the SERVICE, and a backlog is not a queue)
+### → v4.203.0 (every row says what it actually found)
+### → v4.204.0 (Claude Code names your tabs again)
