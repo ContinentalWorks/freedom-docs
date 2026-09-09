@@ -1,39 +1,45 @@
 ---
-name: upgrade-freedom-framework
-description: Locate and fetch the current Freedom upgrade ledger. The full ledger is served to Freedom clients from the client repo; this public file carries the version list so that every installed workspace can tell whether it is behind without needing credentials.
+description: The public version index for Freedom. Every installed workspace polls this file unauthenticated at session start to work out whether it is behind.
 ---
 
-# Freedom Upgrade Ledger — version index
+# Freedom version index
 
 **Latest version: v4.207.2**
 
-This file is public on purpose, and it is deliberately thin.
+This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
 Every installed Freedom workspace polls this URL **unauthenticated** at session start to decide
 whether to tell its owner they are behind. That check has to keep working for someone whose
-access has lapsed, or whose install is years old — those are precisely the people who most need
-to be told a newer version exists. So the version list lives here, in the open, forever.
+access has lapsed, or whose install is years old, and those are precisely the people who most
+need to be told a newer version exists. So the version list lives here, in the open, forever.
 
-The upgrade INSTRUCTIONS are not here. They are served to Freedom clients, who have read access to
-the client repo because that access is how Freedom is installed in the first place.
+## Do not change the shape of the lines below
 
-## Getting the full ledger
+Installs parse `### → vX.Y.Z (title)` and read them positionally, taking the LAST as the newest
+version. A parser only changes when someone upgrades, so the installs reading the oldest parsers
+are exactly the ones this file exists to reach. Reformatting, reordering, or dropping a heading
+mutes them silently, and silence is indistinguishable from "you are up to date".
+
+This file is generated. `sync_stub` in the development repo's `scripts/release.sh` mirrors the
+heading list on every release. Do not hand-edit the versions.
+
+## Where the prose lives
+
+Each heading's parenthetical says what that release was. The longer account of what changed lives
+in the development repository's own changelog, which is not published.
+
+There is nothing here to fetch and nothing to run. Upgrading is two commands:
 
 ```bash
-gh api repos/ContinentalWorks/freedom/contents/UPGRADE-LEDGER.md \
-  -H "Accept: application/vnd.github.raw"
+claude plugin marketplace update freedom-workspace
+claude plugin update freedom@freedom-workspace
 ```
-
-If that returns 404, the GitHub account you are authenticated as is not a Freedom client. That is
-the wall, and it is the only one — nothing here is obfuscated, and the skills themselves are
-plain markdown on your own disk once installed.
 
 Not a client yet: https://github.com/ContinentalWorks/freedom
 
 ## Versions
 
-Newest last. An upgrade applies every entry between the installed version and the latest, in
-order.
+Newest last.
 ### → v2.0.0 (Freedom, formerly PAOS)
 ### → v2.0.1 (the migration command was wrong)
 ### → v2.1.0 (message-contact can address a group)
