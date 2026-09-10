@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.224.0**
+**Latest version: v4.225.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -331,3 +331,4 @@ Newest last.
 ### → v4.222.0 (your agent can read Freedom's own manual now)
 ### → v4.223.0 (the upgrade check told people a merge was clean when it was not)
 ### → v4.224.0 (you can finally read what a release changed, and a frapp link points at your frapp)
+### → v4.225.0 (a blocked merge is a job, and it says what would clear it)
