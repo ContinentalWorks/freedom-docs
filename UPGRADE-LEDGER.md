@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.228.0**
+**Latest version: v4.229.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -339,3 +339,5 @@ Newest last.
 ### → v4.227.0 (your sessions name themselves after the project they are on)
 ### → v4.227.1 (every kind of web link, not only the common two)
 ### → v4.228.0 (a session dedicated to a practice, or to a conversation, names itself too)
+### → v4.228.1 (a commit that credits the agent is refused before it happens)
+### → v4.229.0 (WhatsApp presses send for you, every time it can prove the chat)
