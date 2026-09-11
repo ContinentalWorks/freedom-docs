@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.232.2**
+**Latest version: v4.232.3**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -347,3 +347,4 @@ Newest last.
 ### → v4.232.0 (every project says where its truth lives, who owns it, and who else and how)
 ### → v4.232.1 (the header backfill links a finished project's owner at the right depth)
 ### → v4.232.2 (the continent scaffold prints commands that exist)
+### → v4.232.3 (spin up a project's session on your phone, and pick it up at the desk as the same one)
