@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.229.0**
+**Latest version: v4.229.1**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -341,3 +341,4 @@ Newest last.
 ### → v4.228.0 (a session dedicated to a practice, or to a conversation, names itself too)
 ### → v4.228.1 (a commit that credits the agent is refused before it happens)
 ### → v4.229.0 (WhatsApp presses send for you, every time it can prove the chat)
+### → v4.229.1 (the doctor stops recommending a fix its own installer refuses, and Google Docs stops handing one account another's token)
