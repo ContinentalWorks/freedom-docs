@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.236.0**
+**Latest version: v4.237.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -352,3 +352,4 @@ Newest last.
 ### → v4.234.0 (a project can own a corner of a repo, and the progress ledger charges it only for commits that land there)
 ### → v4.235.0 (a tab never makes a second copy of a session you are still in)
 ### → v4.236.0 (a page you wrote becomes a link on your own artifacts site)
+### → v4.237.0 (your wikis, and the three verbs that keep them)
