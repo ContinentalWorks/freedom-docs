@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.240.0**
+**Latest version: v4.241.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -358,3 +358,4 @@ Newest last.
 ### → v4.238.0 (four reports from three operators, fixed in one sitting)
 ### → v4.239.0 (start a session on your phone, open your Mac, and the tab IS that session)
 ### → v4.240.0 (the clone had a cause, and it was one expression)
+### → v4.241.0 (the walk reads like a page on a desk)
