@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.238.0**
+**Latest version: v4.239.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -356,3 +356,4 @@ Newest last.
 ### → v4.237.1 (a help flag that helps)
 ### → v4.237.2 (an empty message is never a send anyone meant)
 ### → v4.238.0 (four reports from three operators, fixed in one sitting)
+### → v4.239.0 (start a session on your phone, open your Mac, and the tab IS that session)
