@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.237.0**
+**Latest version: v4.237.1**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -353,3 +353,4 @@ Newest last.
 ### → v4.235.0 (a tab never makes a second copy of a session you are still in)
 ### → v4.236.0 (a page you wrote becomes a link on your own artifacts site)
 ### → v4.237.0 (your wikis, and the three verbs that keep them)
+### → v4.237.1 (a help flag that helps)
