@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.243.0**
+**Latest version: v4.244.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -363,3 +363,4 @@ Newest last.
 ### → v4.241.2 (saying "close" closes the tab)
 ### → v4.242.0 (a session that finishes its work closes itself)
 ### → v4.243.0 (the send card carries the message, not the reply around it)
+### → v4.244.0 (the Sunday triage: twelve reports, eleven fixes, three of them from your own patches)
