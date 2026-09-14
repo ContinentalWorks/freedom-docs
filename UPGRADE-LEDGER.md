@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.250.0**
+**Latest version: v4.251.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -370,3 +370,4 @@ Newest last.
 ### → v4.248.0 (a session sent to close a project can now end itself)
 ### → v4.249.0 (upgrade-a-wiki: a framework release reaches a wiki by a version bump)
 ### → v4.250.0 (the session open is instant; the brief is one tap away and already gathered)
+### → v4.251.0 (frontmatter is the truth: your project, document and workflow facts live in a YAML block)
