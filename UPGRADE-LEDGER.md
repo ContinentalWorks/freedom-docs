@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.268.0**
+**Latest version: v4.269.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -390,3 +390,4 @@ Newest last.
 ### → v4.266.0 (the safe way to commit on a file somebody else is also editing)
 ### → v4.267.0 (the close board shows up no matter how the work got saved)
 ### → v4.268.0 (your agent tells you when a routine has lapsed)
+### → v4.269.0 (the panel stops showing four tabs you never use)
