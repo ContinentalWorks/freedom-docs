@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.247.0**
+**Latest version: v4.250.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -367,3 +367,6 @@ Newest last.
 ### → v4.245.0 (the brief links you to the kudos board)
 ### → v4.246.0 (ending a session takes it off your phone)
 ### → v4.247.0 (a busy phone session no longer opens an empty tab every 30 seconds)
+### → v4.248.0 (a session sent to close a project can now end itself)
+### → v4.249.0 (upgrade-a-wiki: a framework release reaches a wiki by a version bump)
+### → v4.250.0 (the session open is instant; the brief is one tap away and already gathered)
