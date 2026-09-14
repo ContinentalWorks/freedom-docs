@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.259.0**
+**Latest version: v4.259.1**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -379,3 +379,4 @@ Newest last.
 ### → v4.257.0 (the session sweep finishes whatever the filesystem does, and says what it could not walk)
 ### → v4.258.0 (the opener grades neither door, closing a project relinks the folder it moves, and a dropped screenshot names the tab after the ask)
 ### → v4.259.0 (a save is a file with fields, and the save log is the index that points at it)
+### → v4.259.1 (a commit is lowercase hex; an uppercase id in the story is not a repo)
