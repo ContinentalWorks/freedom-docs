@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.253.0**
+**Latest version: v4.254.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -373,3 +373,4 @@ Newest last.
 ### → v4.251.0 (frontmatter is the truth: your project, document and workflow facts live in a YAML block)
 ### → v4.252.0 (someone you texted who has no record is offered a file, and you are interviewed about them)
 ### → v4.253.0 (audit-my-corpus: the coherence audit ships, half script and half judgment)
+### → v4.254.0 (land removes dead worktrees on every run, and a lock only counts while its session runs)
