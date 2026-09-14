@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.256.0**
+**Latest version: v4.257.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -376,3 +376,4 @@ Newest last.
 ### → v4.254.0 (land removes dead worktrees on every run, and a lock only counts while its session runs)
 ### → v4.255.0 (the upgrade ledger is data, a releases page renders it, and an update to a co-builder links the whole journey)
 ### → v4.256.0 (the converter keeps a deadline's reasoning as prose, and a one-line value may run to 400 characters)
+### → v4.257.0 (the session sweep finishes whatever the filesystem does, and says what it could not walk)
