@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.258.0**
+**Latest version: v4.259.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -378,3 +378,4 @@ Newest last.
 ### → v4.256.0 (the converter keeps a deadline's reasoning as prose, and a one-line value may run to 400 characters)
 ### → v4.257.0 (the session sweep finishes whatever the filesystem does, and says what it could not walk)
 ### → v4.258.0 (the opener grades neither door, closing a project relinks the folder it moves, and a dropped screenshot names the tab after the ask)
+### → v4.259.0 (a save is a file with fields, and the save log is the index that points at it)
