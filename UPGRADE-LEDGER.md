@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.263.0**
+**Latest version: v4.265.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -385,3 +385,5 @@ Newest last.
 ### → v4.261.0 (Next Step Meeting cards are written for a person, and one shape for every approval ask)
 ### → v4.262.0 (a bug report says what is switched ON, not just what is installed)
 ### → v4.263.0 (a run that worked stops reporting that it failed)
+### → v4.264.0 (naming a fix you did not do is the same handback)
+### → v4.265.0 (a group chat is a conversation too)
