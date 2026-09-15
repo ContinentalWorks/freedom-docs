@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.271.1**
+**Latest version: v4.273.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -394,3 +394,5 @@ Newest last.
 ### → v4.270.0 (six reports from four operators, fixed)
 ### → v4.271.0 (the agent is Freeda; Freedom is what she runs on)
 ### → v4.271.1 (the rename sweeper survives a broken shortcut)
+### → v4.272.0 (a business you run can have a plugin of its own)
+### → v4.273.0 (a test run can no longer text a real person)
