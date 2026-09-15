@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.277.0**
+**Latest version: v4.278.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -400,3 +400,4 @@ Newest last.
 ### → v4.275.0 (closing one tab stops blaming it for what the others did)
 ### → v4.276.0 (your calls stop being the part of your week nothing counted)
 ### → v4.277.0 (a WhatsApp group message that did not arrive stops saying it did)
+### → v4.278.0 (a person you have cut off can no longer be messaged one to one)
