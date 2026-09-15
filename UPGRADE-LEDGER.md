@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.274.0**
+**Latest version: v4.276.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -397,3 +397,5 @@ Newest last.
 ### → v4.272.0 (a business you run can have a plugin of its own)
 ### → v4.273.0 (a test run can no longer text a real person)
 ### → v4.274.0 (your terminal opens clean, and frapps open in your browser)
+### → v4.275.0 (closing one tab stops blaming it for what the others did)
+### → v4.276.0 (your calls stop being the part of your week nothing counted)
