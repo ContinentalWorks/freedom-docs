@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.284.0**
+**Latest version: v4.285.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -407,3 +407,4 @@ Newest last.
 ### → v4.282.0 (the test suite runs in 185 seconds instead of 346)
 ### → v4.283.0 (a review your operator can do from their phone)
 ### → v4.284.0 (land never removes a worktree you are still working in)
+### → v4.285.0 (Your phone will not quietly discard what you did at your desk)
