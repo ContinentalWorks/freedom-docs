@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.291.1**
+**Latest version: v4.291.2**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -415,3 +415,4 @@ Newest last.
 ### → v4.290.0 (phone sessions no longer hang on Allocating sandbox after Claude Code updates itself)
 ### → v4.291.0 (Remote control comes with Freedom, message syncs see the pictures people send, and a long capture run can no longer be overrun)
 ### → v4.291.1 (Releasing in the documented order no longer refuses on concept pages already reviewed on the wiki branch)
+### → v4.291.2 (The checkup names a private wiki still leaking its full text, and a renamed meeting note no longer records its source as unknown)
