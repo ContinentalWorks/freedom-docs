@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.289.0**
+**Latest version: v4.290.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -412,3 +412,4 @@ Newest last.
 ### → v4.287.0 (your agent keeps a record of everything it did that reached outside your machine)
 ### → v4.288.0 (you can ask what your agent actually did, not just what you asked for)
 ### → v4.289.0 (you can read the record of what your agent did, and turn it off)
+### → v4.290.0 (phone sessions no longer hang on Allocating sandbox after Claude Code updates itself)
