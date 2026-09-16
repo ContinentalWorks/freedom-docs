@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.291.2**
+**Latest version: v4.292.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -416,3 +416,5 @@ Newest last.
 ### → v4.291.0 (Remote control comes with Freedom, message syncs see the pictures people send, and a long capture run can no longer be overrun)
 ### → v4.291.1 (Releasing in the documented order no longer refuses on concept pages already reviewed on the wiki branch)
 ### → v4.291.2 (The checkup names a private wiki still leaking its full text, and a renamed meeting note no longer records its source as unknown)
+### → v4.291.3 (Freedom writes American English by default, with a dialect setting, and updating a shared workspace no longer leaves its main checkout dirty)
+### → v4.292.0 (Keys go in through a private page instead of the chat, and links texted over iMessage arrive as preview cards)
