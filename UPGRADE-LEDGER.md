@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.292.0**
+**Latest version: v4.293.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -418,3 +418,4 @@ Newest last.
 ### → v4.291.2 (The checkup names a private wiki still leaking its full text, and a renamed meeting note no longer records its source as unknown)
 ### → v4.291.3 (Freedom writes American English by default, with a dialect setting, and updating a shared workspace no longer leaves its main checkout dirty)
 ### → v4.292.0 (Keys go in through a private page instead of the chat, and links texted over iMessage arrive as preview cards)
+### → v4.293.0 (every Claude Code session on your Mac can reach your phone, not only the ones the freedom launcher opens)
