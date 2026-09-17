@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.295.1**
+**Latest version: v4.296.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -422,3 +422,4 @@ Newest last.
 ### → v4.294.0 (every session tells you what is behind the best Freedom setup until it is fixed, and the board leads with the fix)
 ### → v4.295.0 (when Freedom suggests what to do next, it picks the move that is best for you, the people around you and the world, and there is a skill that does that move)
 ### → v4.295.1 (opening a session takes about half as long, and the dev test runner skips suites nothing touched)
+### → v4.296.0 (session names say what the session became: Project · what landed, never a chopped first message)
