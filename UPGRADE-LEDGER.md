@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.297.0**
+**Latest version: v4.297.1**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -425,3 +425,4 @@ Newest last.
 ### → v4.296.0 (session names say what the session became: Project · what landed, never a chopped first message)
 ### → v4.296.1 (Closing a tab no longer waits on work other sessions did)
 ### → v4.297.0 (every Freedom tab and phone session shows what the session is about)
+### → v4.297.1 (Closing a tab no longer gets blocked by changes that only re-labeled documents)
