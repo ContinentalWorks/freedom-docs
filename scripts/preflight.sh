@@ -60,10 +60,10 @@ ARCH="$(uname -m)"
 if [[ "$ARCH" == "arm64" ]]; then
   # Parse the M-generation out of e.g. "Apple M3 Pro"
   MGEN="$(echo "$CHIP" | sed -n 's/.*Apple M\([0-9][0-9]*\).*/\1/p')"
-  if [[ -n "$MGEN" && "$MGEN" -ge 3 ]]; then
-    row "$PASS" "Chip" "$CHIP (Apple Silicon, M3 or newer)"
+  if [[ -n "$MGEN" && "$MGEN" -ge 4 ]]; then
+    row "$PASS" "Chip" "$CHIP (Apple Silicon, M4 or newer)"
   elif [[ -n "$MGEN" ]]; then
-    row "$WARN" "Chip" "$CHIP — works, but M3+ is the recommended floor; expect slower sessions"
+    row "$WARN" "Chip" "$CHIP — runs, but M4 or newer is the floor; expect slower sessions. See https://getfreedom.wiki/start-here/what-machine-you-need"
   else
     row "$PASS" "Chip" "$CHIP (Apple Silicon)"
   fi
