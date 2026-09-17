@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.299.0**
+**Latest version: v4.300.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -430,3 +430,4 @@ Newest last.
 ### → v4.297.3 (how sessions get their names is written down for users, and the skills say the same thing)
 ### → v4.298.0 ("open a new chat" opens a tab in the Freedom editor already working, and seven refusals that named the wrong thing are fixed)
 ### → v4.299.0 (the capture pipeline stops dating messages in Chicago, typing a recording as unknown, and filing one call twice; the doctor stops telling you to quit VS Code or to add an app that is already listed)
+### → v4.300.0 (Your edge on the portal: the number the system is pointed at, counted from your own files, as a mountain that only goes up)
