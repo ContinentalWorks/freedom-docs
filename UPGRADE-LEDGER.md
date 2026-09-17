@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.302.0**
+**Latest version: v4.303.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -434,3 +434,4 @@ Newest last.
 ### → v4.301.0 (when a session is clearly done, a three-option close board comes up on its own: end and close this tab, do that and open a fresh one, or keep chatting)
 ### → v4.301.1 (Your edge counts a cadence written in your own words, so 'every week or two' is no longer zero)
 ### → v4.302.0 (the celebration character actually runs: built and started on update, flies at the save and the close; the tab shows a pan while working and drops the hand when you answer)
+### → v4.303.0 (a Krisp call has a way back to its recording)
