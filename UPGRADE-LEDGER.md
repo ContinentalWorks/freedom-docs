@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.304.0**
+**Latest version: v4.305.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -436,3 +436,4 @@ Newest last.
 ### → v4.302.0 (the celebration character actually runs: built and started on update, flies at the save and the close; the tab shows a pan while working and drops the hand when you answer)
 ### → v4.303.0 (a Krisp call has a way back to its recording)
 ### → v4.304.0 (more than a day behind, Freedom updates itself at session start)
+### → v4.305.0 (a session opened with a skill is named after the skill)
