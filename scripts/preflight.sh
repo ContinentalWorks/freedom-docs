@@ -68,17 +68,17 @@ if [[ "$ARCH" == "arm64" ]]; then
     row "$PASS" "Chip" "$CHIP (Apple Silicon)"
   fi
 else
-  row "$FAIL" "Chip" "$CHIP — Intel Mac. The workshop will be painful; there is no software workaround. See https://getfreedom.wiki/start-here/what-machine-you-need"
+  row "$FAIL" "Chip" "$CHIP — Intel Mac. The workshop will be painful; there is no software workaround. See https://supersuit.wiki/reference/laptop-requirements"
 fi
 
 RAM_BYTES="$(sysctl -n hw.memsize 2>/dev/null || echo 0)"
 RAM_GB=$((RAM_BYTES / 1073741824))
 if [[ "$RAM_GB" -ge 32 ]]; then
-  row "$PASS" "RAM" "${RAM_GB} GB (32 GB floor met)"
+  row "$PASS" "RAM" "${RAM_GB} GB (comfortable)"
 elif [[ "$RAM_GB" -ge 16 ]]; then
-  row "$WARN" "RAM" "${RAM_GB} GB — runs, but 32 GB is the floor and memory cannot be added later. Keep fewer sessions open. See https://getfreedom.wiki/start-here/what-machine-you-need"
+  row "$PASS" "RAM" "${RAM_GB} GB (honest minimum; 32 GB is the comfortable floor)"
 else
-  row "$FAIL" "RAM" "${RAM_GB} GB — below 16 GB; this workload does not run. See https://getfreedom.wiki/start-here/what-machine-you-need"
+  row "$FAIL" "RAM" "${RAM_GB} GB — below the 16 GB minimum. See https://supersuit.wiki/reference/laptop-requirements"
 fi
 
 DISK_AVAIL_GB="$(df -g / 2>/dev/null | awk 'NR==2 {print $4}')"
