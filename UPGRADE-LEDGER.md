@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.313.0**
+**Latest version: v4.313.1**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -446,3 +446,4 @@ Newest last.
 ### → v4.311.1 (a test run of a mounted frapp leaves the mount alone, and a helper machine can no longer report a quiet day it did not have)
 ### → v4.312.0 (Public writing can be run through StealthGPT without the truth bending)
 ### → v4.313.0 (a tab stays cooking while a subagent or background job is still running)
+### → v4.313.1 (a phone-started session that ends itself now comes off your phone on its own)
