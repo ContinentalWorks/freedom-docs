@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.308.0**
+**Latest version: v4.309.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -440,3 +440,4 @@ Newest last.
 ### → v4.306.0 (connect-google survives the browser's follow-up request, and a migrated date never leaves a stale twin)
 ### → v4.307.0 (Done for now ends the Next Step Meeting, busy afternoons stop re-judging every card, and a tapped skill names its tab)
 ### → v4.308.0 (upgrade-a-wiki can upgrade a 1.0.0 wiki, and never pushes a gate it replaced)
+### → v4.309.0 (Every frapp page refreshes itself when what it shows changes, keeping your place and anything typed)
