@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.311.0**
+**Latest version: v4.311.1**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -443,3 +443,4 @@ Newest last.
 ### → v4.309.0 (Every frapp page refreshes itself when what it shows changes, keeping your place and anything typed)
 ### → v4.310.0 (A text reported sent is a text that went out, and a board reached through the store shows its pictures)
 ### → v4.311.0 (A deck is data plus one shell, presented from your frapp store and driven from your phone)
+### → v4.311.1 (a test run of a mounted frapp leaves the mount alone, and a helper machine can no longer report a quiet day it did not have)
