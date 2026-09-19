@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.315.2**
+**Latest version: v4.317.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -451,3 +451,5 @@ Newest last.
 ### → v4.315.0 (a session on a schedule: your agent opens a project's session on its own, only when a gate finds work)
 ### → v4.315.1 (a scheduled session actually opens under launchd)
 ### → v4.315.2 (the approval board says Skip, never Cancel)
+### → v4.316.0 (the capture mirror carries Apple Contacts, so names resolve and phones backfill on a helper machine)
+### → v4.317.0 (A thing you do by hand once becomes a skill, and every run improves it)
