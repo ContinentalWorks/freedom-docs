@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.324.0**
+**Latest version: v4.325.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -461,3 +461,4 @@ Newest last.
 ### → v4.320.0 (a shared-project conversation the pull hook brings down is committed by the hook, never left uncommitted on main)
 ### → v4.321.0 (a session ledger: where every session started and what every handoff actor decided, readable by session id)
 ### → v4.324.0 (clean-up-my-machine: what is eating your Mac, and one board to stop what you pick)
+### → v4.325.0 (an image key saved through manage-api-keys just works, a placeholder is called one, and a rebuilt capture helper reads its own signature right)
