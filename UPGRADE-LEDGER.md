@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.327.0**
+**Latest version: v4.328.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -464,3 +464,4 @@ Newest last.
 ### → v4.325.0 (an image key saved through manage-api-keys just works, a placeholder is called one, and a rebuilt capture helper reads its own signature right)
 ### → v4.326.0 (Catch up Freeda: the capture pipeline's new name, and Zoom recordings swept with everything else)
 ### → v4.327.0 (frapps get a shared voice recorder: pinned at the top, takes stack and upload as they stop, Save joins them, and an empty save writes nothing)
+### → v4.328.0 (send-message: a retry after a failed briefing no longer repeats the intro line)
