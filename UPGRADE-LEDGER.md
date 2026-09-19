@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.319.0**
+**Latest version: v4.319.1**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -457,3 +457,4 @@ Newest last.
 ### → v4.318.1 (the close board goes up even when the session asked you something else on the way)
 ### → v4.318.2 (removing a symlink inside a worktree is no longer refused as a write to main)
 ### → v4.319.0 (a phone session that refuses to come home no longer opens empty tabs, and the test suite stops rewriting your editor board)
+### → v4.319.1 (updating Freedom now upgrades the editor's Freedom extension instead of calling an old one current)
