@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.325.0**
+**Latest version: v4.326.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -462,3 +462,4 @@ Newest last.
 ### → v4.321.0 (a session ledger: where every session started and what every handoff actor decided, readable by session id)
 ### → v4.324.0 (clean-up-my-machine: what is eating your Mac, and one board to stop what you pick)
 ### → v4.325.0 (an image key saved through manage-api-keys just works, a placeholder is called one, and a rebuilt capture helper reads its own signature right)
+### → v4.326.0 (Catch up Freeda: the capture pipeline's new name, and Zoom recordings swept with everything else)
