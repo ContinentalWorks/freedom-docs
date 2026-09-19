@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.331.0**
+**Latest version: v4.332.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -468,3 +468,4 @@ Newest last.
 ### → v4.329.0 (A fresh install comes up clean: shipped projects already converged, the celebration app builds on Command Line Tools, the editor can be set up before activation, and the convos pipeline enters a worktree before the work)
 ### → v4.330.0 (The install is one half of a co-build session: bootstrap's handoff says it is run together with the person who invited them, and the install skill refuses to run alone)
 ### → v4.331.0 (No dropped balls: the board of everyone waiting on you, with the reply drafted)
+### → v4.332.0 (the convos pipeline can actually run inside the worktree v4.329.0 sends it into: its memory stays on main, and the commands it prescribes are ones the worktree accepts)
