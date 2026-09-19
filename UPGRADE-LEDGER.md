@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.318.1**
+**Latest version: v4.318.2**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -455,3 +455,4 @@ Newest last.
 ### → v4.317.0 (A thing you do by hand once becomes a skill, and every run improves it)
 ### → v4.318.0 (the overnight pass survives its own update, filed calls stop coming back as new, and landing never deletes the folder you are standing in)
 ### → v4.318.1 (the close board goes up even when the session asked you something else on the way)
+### → v4.318.2 (removing a symlink inside a worktree is no longer refused as a write to main)
