@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.315.0**
+**Latest version: v4.315.1**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -449,3 +449,4 @@ Newest last.
 ### → v4.313.1 (a phone-started session that ends itself now comes off your phone on its own)
 ### → v4.314.0 (Four reports fixed, and your agent can put a question on your phone and wait)
 ### → v4.315.0 (a session on a schedule: your agent opens a project's session on its own, only when a gate finds work)
+### → v4.315.1 (a scheduled session actually opens under launchd)
