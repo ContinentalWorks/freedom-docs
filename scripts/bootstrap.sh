@@ -138,9 +138,11 @@ run() { # run <command...> — executes, or narrates under --dry-run
 #
 # --dangerously-skip-permissions is still refused. It is the same posture
 # spelled as a warning, and test-setup-scripts.sh asserts it never appears.
+# One prompt, used by the exec at the end and by --print-handoff, so the two cannot disagree.
+HANDOFF_PROMPT="Read \$INSTALL_SKILL_FILE and follow it exactly. It is the Freedom install skill. It is run TOGETHER with the person who invited them, who should be on a call or in the room; the skill's first section asks, and if they are not, you stop there and say so, running nothing."
+handoff_prompt() { printf '%s' "${HANDOFF_PROMPT//\$INSTALL_SKILL_FILE/$INSTALL_SKILL_FILE}"; }
 handoff_cmd() {
-  printf 'claude --permission-mode bypassPermissions %s\n' \
-    "\"Read $INSTALL_SKILL_FILE and follow it exactly. It is the Freedom install skill.\""
+  printf 'claude --permission-mode bypassPermissions "%s"\n' "$(handoff_prompt)"
 }
 
 if [[ "$PRINT_HANDOFF" -eq 1 ]]; then
@@ -316,5 +318,10 @@ if ! command -v claude >/dev/null 2>&1; then
   exit 0
 fi
 
-exec claude --permission-mode bypassPermissions \
-  "Read $INSTALL_SKILL_FILE and follow it exactly. It is the Freedom install skill."
+# THE INSTALL IS ONE HALF OF A CO-BUILD SESSION, never a solo run. The skill's first section
+# asks whether the person who invited them is on with them and refuses to continue when the
+# answer is no; the prompt says so too, so the agent does not read that section as a
+# formality. A new operator followed the skill alone on 2026-09-19, dead-ended at the editor
+# and filed four defects from a bare terminal in his first hour (Gary: "let's not allow people
+# to manually install").
+exec claude --permission-mode bypassPermissions "$(handoff_prompt)"
