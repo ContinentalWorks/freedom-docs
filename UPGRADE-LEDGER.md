@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.351.0**
+**Latest version: v4.353.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -488,3 +488,5 @@ Newest last.
 ### → v4.349.0 (a tab on an older plugin than the install says so, the worktree gate models a script file, and a practice can say it has never run)
 ### → v4.350.0 (The hub can start a session from the phone; Send, not Ask; the empty queue goes home)
 ### → v4.351.0 (The hub hears Freeda, not Frida)
+### → v4.352.0 (Every Needs-you row says what to do and opens the page it names)
+### → v4.353.0 (the review page's recorder is in front of you, never behind a button; hidden lineage comments stay hidden)
