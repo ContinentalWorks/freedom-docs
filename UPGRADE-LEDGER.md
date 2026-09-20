@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.350.0**
+**Latest version: v4.351.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -487,3 +487,4 @@ Newest last.
 ### → v4.348.0 (a Mac set never to sleep on AC is read as such, email can be elected as a capture source, the checkpoint gate keys on dedup_key, and a slow first read is not called broken)
 ### → v4.349.0 (a tab on an older plugin than the install says so, the worktree gate models a script file, and a practice can say it has never run)
 ### → v4.350.0 (The hub can start a session from the phone; Send, not Ask; the empty queue goes home)
+### → v4.351.0 (The hub hears Freeda, not Frida)
