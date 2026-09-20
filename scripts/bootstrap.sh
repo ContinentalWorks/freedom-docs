@@ -77,25 +77,141 @@ log_line() {
   echo "$(date -u +%Y-%m-%dT%H:%M:%SZ) $*" >> "$LOG_FILE"
 }
 
+# ---------- Saying what is happening, on three surfaces ----------
+#
+# WHY THIS IS HERE AT ALL. The handoff below turns every approval prompt off, for the reason
+# argued over handoff_cmd: a newcomer cannot tell a dangerous write from an ordinary one, so
+# a wall of dialogs only teaches them to click through. That reasoning holds, and it leaves a
+# debt. The prompts were the only thing telling them what was happening, and taking them away
+# without replacing them leaves someone watching a black terminal install software onto their
+# own machine. If you take the prompts away, you owe them a receipt.
+#
+# Three surfaces, and each covers a case the others cannot:
+#   the terminal   carries the explanation, and always works
+#   a Mac banner   covers the ten minutes they walk away from a Homebrew download
+#   the receipt    ~/Freedom-install-receipt.txt, what changed and how to undo it, kept
+#
+# NOT THE SAME FILE AS $LOG_FILE, and both stay. ~/.freedom-setup.log is a timestamped
+# machine log for diagnosing a failed run. The receipt is a plain-text document for the
+# person, in their home folder rather than hidden, written for someone who has never opened
+# a terminal. Two readers, two artifacts.
+#
+# The install skill this hands off to writes its own copy of these functions, deliberately.
+# Sharing one file across two repos on two release cadences drifts the moment either moves,
+# and the skill itself warns about exactly that. The only shared contract is the receipt
+# format, which is a plain text file two programs append to, documented by its own header.
+#
+# NOTHING HERE MAY EVER FAIL THE INSTALL. Every side effect is best-effort.
+
+RECEIPT="$HOME/Freedom-install-receipt.txt"
+BANNERS=0   # set to 1 by ask_banners once the operator has been told what is coming
+
+receipt_init() {
+  [[ "$DRY_RUN" -eq 1 || -f "$RECEIPT" ]] && return 0
+  {
+    echo "FREEDOM INSTALL RECEIPT"
+    echo "Everything this setup changed on your Mac, in the order it happened."
+    echo "Started $(date '+%Y-%m-%d %H:%M')."
+    echo ""
+    echo "Each entry is written as that step begins, so if setup stops partway"
+    echo "through, this still shows you everything it had done by then."
+    echo ""
+    echo "You can delete this file. Keeping it means you always have a record of"
+    echo "what was put on this machine and how to undo any of it."
+    echo ""
+  } >> "$RECEIPT" 2>/dev/null || true
+}
+
+# receipt_add <title> <where> <undo>
+receipt_add() {
+  [[ "$DRY_RUN" -eq 1 ]] && return 0
+  receipt_init
+  {
+    echo "[$(date '+%H:%M')] $1"
+    [[ -n "${2:-}" ]] && echo "        Where: $2"
+    [[ -n "${3:-}" ]] && echo "        Undo:  $3"
+    echo ""
+  } >> "$RECEIPT" 2>/dev/null || true
+}
+
+# Arguments reach osascript as argv rather than interpolated into the script text, so a
+# title containing a quote cannot break or inject into the AppleScript.
+banner() {
+  [[ "$BANNERS" -eq 1 ]] || return 0
+  osascript -e 'on run argv' \
+    -e 'display notification (item 1 of argv) with title "Freedom install"' \
+    -e 'end run' -- "$1" >/dev/null 2>&1 || true
+}
+
+# Explain the macOS notification box BEFORE triggering it. The first `display notification`
+# raises a permission dialog, and an unexplained system dialog during the one session where
+# nothing works yet is the opposite of reassuring. This is the same courtesy the Homebrew
+# step already extends about the invisible password typing.
+ask_banners() {
+  [[ "$DRY_RUN" -eq 1 ]] && return 0
+  command -v osascript >/dev/null 2>&1 || return 0
+  echo ""
+  echo "  This takes about ten minutes, and most of it is downloading."
+  echo "  I can send you a notification as each step starts, so you can go"
+  echo "  and do something else and still see where I got to."
+  echo ""
+  echo "  Your Mac is about to ask whether to allow that. Saying no is fine:"
+  echo "  you will still see every step here in this window."
+  echo ""
+  BANNERS=1
+  banner "Setup started. I will tell you what I am doing at each step."
+}
+
+# step_begin <title> [doing] [changes] [not-touched] [undo]
+#
+# The four-line block is the whole safety measure. `Not touched:` is the line that converts a
+# list of operations into a boundary, and it is the one that will get dropped first if this is
+# ever a documented format rather than a function.
 step_begin() {
   CURRENT_STEP="$1"
   STEP_START=$(date +%s)
   echo ""
   echo "==> $1"
+  if [[ -n "${2:-}" || -n "${3:-}" || -n "${4:-}" ]]; then
+    echo ""
+    [[ -n "${2:-}" ]] && echo "    Doing:        $2"
+    [[ -n "${3:-}" ]] && echo "    Changes:      $3"
+    [[ -n "${4:-}" ]] && echo "    Not touched:  $4"
+    echo ""
+  fi
   log_line "BEGIN $1"
+  banner "$1"
+  receipt_add "$1" "${3:-}" "${5:-}"
 }
+
+# NO step_look HERE, deliberately. All four steps below change something, so a read-only
+# variant would be dead code in a script whose whole job is four writes. The install skill
+# this hands off to DOES have one (`say_look`) and uses it five times, because most of its
+# steps only look. Saying "nothing changes" out loud is not filler there: someone who only
+# ever hears that phrase when it is true will believe "installing" when that is.
 
 step_done() {
   local elapsed=$(($(date +%s) - STEP_START))
+  [[ -n "${1:-}" ]] && echo "    Done:         $1"
   log_line "OK    $CURRENT_STEP (${elapsed}s)"
 }
 
 on_fail() {
   log_line "FAIL  $CURRENT_STEP"
+  banner "Setup stopped during: $CURRENT_STEP"
   echo ""
   echo "=================================================="
   echo "  Setup hit a problem during: $CURRENT_STEP"
   echo ""
+  # The receipt is written per step as each begins, so it is an accurate account of what
+  # exists even now. This is the case it was built for: the moment they most need to know
+  # what is on their machine is the moment the thing telling them has just failed.
+  if [[ -f "$RECEIPT" ]]; then
+    echo "  Nothing is in a broken state. What setup had already"
+    echo "  done is written down in:"
+    echo "    $RECEIPT"
+    echo ""
+  fi
   echo "  This is normal and fixable. Copy the last twenty"
   echo "  lines of output above (and the log at $LOG_FILE)"
   echo "  and paste them into your AI chat (Claude, ChatGPT,"
@@ -177,9 +293,17 @@ echo "  Log: $LOG_FILE"
 echo "=================================================="
 log_line "=== bootstrap run started (dry_run=$DRY_RUN) ==="
 
+# Offered before the first step, so the operator hears about the notification box from this
+# script rather than meeting it cold from macOS.
+ask_banners
+
 # ---------- Step 1: Homebrew ----------
 
-step_begin "Homebrew (the Mac package manager)"
+step_begin "Homebrew (the Mac package manager)" \
+  "installing the tool that installs everything else on a Mac" \
+  "a new folder for Homebrew, and one line added to ~/.zprofile so your shell can find it" \
+  "any app you already have, and nothing existing is upgraded or replaced" \
+  "see https://github.com/homebrew/install#uninstall-homebrew"
 BREW_BIN=""
 if command -v brew >/dev/null 2>&1; then
   BREW_BIN="$(command -v brew)"
@@ -211,7 +335,7 @@ if [[ -n "$BREW_BIN" && "$DRY_RUN" -eq 0 ]]; then
     echo "    added Homebrew to PATH in ~/.zprofile"
   fi
 fi
-step_done
+step_done "Homebrew is on this Mac and your shell can find it"
 
 # ---------- Step 2: Node and Git ----------
 #
@@ -225,7 +349,11 @@ step_done
 # readers' sync.sh print "jq: command not found" and exit 0 with an empty result, which
 # reads as a clean "0 new" run. A fresh machine that reaches capture without it gets a
 # relationship manager that reports success and stays empty (#53, @yyabdi).
-step_begin "Node.js, Git and jq (what the harness runs on)"
+step_begin "Node.js, Git and jq (what the harness runs on)" \
+  "installing the three building blocks Freedom itself runs on" \
+  "three command line tools, installed by Homebrew" \
+  "nothing you have installed yourself; if you already have any of these, they are left alone" \
+  "brew uninstall node git jq"
 for formula in node git jq; do
   if command -v "$formula" >/dev/null 2>&1; then
     echo "    $formula already installed: $("$formula" --version 2>/dev/null | head -1)"
@@ -234,18 +362,22 @@ for formula in node git jq; do
     run brew install "$formula"
   fi
 done
-step_done
+step_done "Node.js, Git and jq are installed"
 
 # ---------- Step 3: Claude Code ----------
 
-step_begin "Claude Code (the agent)"
+step_begin "Claude Code (the agent)" \
+  "installing the agent that does the rest of the setup and that you will talk to afterwards" \
+  "the Claude Code app, from Homebrew's reviewed and signed build" \
+  "your files; installing it does not sign you in to anything or read anything" \
+  "brew uninstall --cask claude-code"
 if command -v claude >/dev/null 2>&1; then
   echo "    already installed: $(claude --version 2>/dev/null | head -1)"
 else
   echo "    installing via Homebrew cask (reviewed, signed binary)..."
   run brew install --cask claude-code
 fi
-step_done
+step_done "Claude Code is installed; nothing is signed in yet"
 
 # ---------- Step 4: Fetch the install skill ----------
 #
@@ -253,7 +385,11 @@ step_done
 # agent a prompt that points at a file which does not exist is the worst of
 # both worlds: it looks like it worked, then wanders.
 
-step_begin "The install skill"
+step_begin "The install skill" \
+  "downloading the written instructions the agent follows for the rest of the setup" \
+  "one text file at $INSTALL_SKILL_FILE" \
+  "anything else; this is a document, not a program, and you can open and read it" \
+  "rm $INSTALL_SKILL_FILE"
 if [[ "$DRY_RUN" -eq 1 ]]; then
   echo "    [dry-run] would fetch $INSTALL_SKILL_URL"
   echo "    [dry-run] would write $INSTALL_SKILL_FILE"
@@ -278,7 +414,7 @@ else
   fi
   echo "    fetched ($(wc -l < "$INSTALL_SKILL_FILE" | tr -d ' ') lines)"
 fi
-step_done
+step_done "the install skill is on disk, and you can open it and read it"
 
 # ---------- Handoff ----------
 
@@ -294,6 +430,10 @@ echo ""
 echo "  Everything else is done by your agent, which can"
 echo "  see what actually happens on this machine and ask"
 echo "  you when something is not what it expected."
+echo ""
+echo "  It will tell you what it is doing at every step, and"
+echo "  write it down in Freedom-install-receipt.txt in your"
+echo "  home folder, with how to undo any of it."
 echo ""
 echo "  The first launch opens a browser so you can sign in."
 echo "=================================================="
