@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.344.0**
+**Latest version: v4.345.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -481,3 +481,4 @@ Newest last.
 ### → v4.342.0 (Your frapp bookmark opens on what needs you: blocked sessions first, then the away switch, your live sessions, and the frapps)
 ### → v4.343.0 (send-message can schedule a send for later, with the teardown in the library; catch-up-freeda counts Krisp labels in the body before renaming, and never renames by index)
 ### → v4.344.0 (A first WhatsApp run keeps the window you elected, and the hand contact lookup reads every Contacts source)
+### → v4.345.0 (A reviewed document shows its pictures, a linked document's passes show their diffs, and a note left between two watches is never missed)
