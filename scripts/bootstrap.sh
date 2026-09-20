@@ -335,7 +335,7 @@ if [[ -n "$BREW_BIN" && "$DRY_RUN" -eq 0 ]]; then
     echo "    added Homebrew to PATH in ~/.zprofile"
   fi
 fi
-step_done
+step_done "Homebrew is on this Mac and your shell can find it"
 
 # ---------- Step 2: Node and Git ----------
 #
@@ -362,7 +362,7 @@ for formula in node git jq; do
     run brew install "$formula"
   fi
 done
-step_done
+step_done "Node.js, Git and jq are installed"
 
 # ---------- Step 3: Claude Code ----------
 
@@ -377,7 +377,7 @@ else
   echo "    installing via Homebrew cask (reviewed, signed binary)..."
   run brew install --cask claude-code
 fi
-step_done
+step_done "Claude Code is installed; nothing is signed in yet"
 
 # ---------- Step 4: Fetch the install skill ----------
 #
@@ -414,7 +414,7 @@ else
   fi
   echo "    fetched ($(wc -l < "$INSTALL_SKILL_FILE" | tr -d ' ') lines)"
 fi
-step_done
+step_done "the install skill is on disk, and you can open it and read it"
 
 # ---------- Handoff ----------
 
