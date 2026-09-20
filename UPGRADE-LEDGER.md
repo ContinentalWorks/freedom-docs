@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.353.0**
+**Latest version: v4.354.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -490,3 +490,4 @@ Newest last.
 ### → v4.351.0 (The hub hears Freeda, not Frida)
 ### → v4.352.0 (Every Needs-you row says what to do and opens the page it names)
 ### → v4.353.0 (the review page's recorder is in front of you, never behind a button; hidden lineage comments stay hidden)
+### → v4.354.0 (a frapp edit asks whether it lifts all boats; the recorder bar is shared and never scrolls through)
