@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.340.0**
+**Latest version: v4.341.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -477,3 +477,4 @@ Newest last.
 ### → v4.338.0 (drive-chrome cannot type a password into the wrong field or print it, refuses a click an overlay would eat, and clicks by point; map-a-workflow's own maps validate)
 ### → v4.339.0 (The close board stops asking once you say keep chatting)
 ### → v4.340.0 (someone you text whose file is in your archive gets it back, never a duplicate)
+### → v4.341.0 (The stay-awake check can fire again, the installer says what each step changes and leaves a receipt, a WhatsApp archive in a read-only folder still reads, and an update restarts a frapp store on old code)
