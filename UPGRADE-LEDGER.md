@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.359.0**
+**Latest version: v4.360.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -496,3 +496,4 @@ Newest last.
 ### → v4.357.0 (takes are heard as they land, so Save never waits; an in-place edit to a served frapp refuses and names the worktree loop; the folded record button stays round)
 ### → v4.358.0 (typing at your Mac clears the away flag, so a question asked right after you sit down shows up in the window instead of going to your phone)
 ### → v4.359.0 (the close board's third row saves before it keeps chatting, so nothing stays unsaved in an open tab)
+### → v4.360.0 (stay-awake has modes and says the lid part; a phone-link check that could not run says so instead of sending you to set up a tailnet that is live)
