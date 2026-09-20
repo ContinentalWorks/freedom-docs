@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.337.0**
+**Latest version: v4.338.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -474,3 +474,4 @@ Newest last.
 ### → v4.335.0 (Review by voice: the whole document under a recorder, no text box, and a passes strip showing what each note changed)
 ### → v4.336.0 (a review note can be spoken on every item (Wilson's PR merged with the voice review), and the Next Step Meeting's card books the when)
 ### → v4.337.0 (The recorder shows you it hears you: red button, live level meter, Save stops a running take, the bar folds while you read; numbered lists on every frapp; a sleeping phone no longer refuses a review; a watching session is never duplicated)
+### → v4.338.0 (drive-chrome cannot type a password into the wrong field or print it, refuses a click an overlay would eat, and clicks by point; map-a-workflow's own maps validate)
