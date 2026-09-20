@@ -1,6 +1,6 @@
 {
   "about": "Publish time of every Freedom release, read by installs to decide whether an update is forced. Written by scripts/release.sh; never hand-edit.",
-  "latest": "v4.347.0",
+  "latest": "v4.348.0",
   "publishedAt": {
     "v4.304.0": "2026-09-17T20:37:43.000Z",
     "v4.303.0": "2026-09-17T00:00:00.000Z",
@@ -481,6 +481,7 @@
     "v4.344.0": "2026-09-20T14:33:53.438Z",
     "v4.345.0": "2026-09-20T16:22:40.764Z",
     "v4.346.0": "2026-09-20T17:30:55.242Z",
-    "v4.347.0": "2026-09-20T18:08:44.328Z"
+    "v4.347.0": "2026-09-20T18:08:44.328Z",
+    "v4.348.0": "2026-09-20T18:44:52.953Z"
   }
 }

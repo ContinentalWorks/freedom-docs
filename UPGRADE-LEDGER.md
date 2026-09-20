@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.347.0**
+**Latest version: v4.348.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -484,3 +484,4 @@ Newest last.
 ### → v4.345.0 (A reviewed document shows its pictures, a linked document's passes show their diffs, and a note left between two watches is never missed)
 ### → v4.346.0 (Talk to the hub: answer a card by voice, ask the hub what everyone is doing and hear it back, and a brain that can only describe, start a session, or answer a card you named)
 ### → v4.347.0 (The hub's spoken reply plays to the end; the page waits for it)
+### → v4.348.0 (a Mac set never to sleep on AC is read as such, email can be elected as a capture source, the checkpoint gate keys on dedup_key, and a slow first read is not called broken)
