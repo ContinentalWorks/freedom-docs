@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.361.2**
+**Latest version: v4.362.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -500,3 +500,4 @@ Newest last.
 ### → v4.361.0 (a first run files your people in one tap, a person file never claims a conversation that did not happen, and four more from one operator's first day)
 ### → v4.361.1 (always-on remote control no longer reports its own first start as a failure)
 ### → v4.361.2 (a page for one person is no longer refused on its own front matter)
+### → v4.362.0 (a frapp proves it can write before you get the link, capture withholds a password typed to a friend, a chat's whole backlog is read, scheduled work stops at a token ceiling, and the worktree gate stops refusing its own remedy)
