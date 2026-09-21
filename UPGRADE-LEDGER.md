@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.364.1**
+**Latest version: v4.369.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -504,3 +504,8 @@ Newest last.
 ### → v4.363.0 (the morning file says who you talked to yesterday and what each of you owes, and a closing tab that cannot identify itself says so)
 ### → v4.364.0 (the recorder looks like a control, sends itself five seconds after you stop, and a re-sent take is not a second take)
 ### → v4.364.1 (the record button is a circle on iPhone too)
+### → v4.364.2 (one recording is one take, on iPhone too)
+### → v4.366.0 (A page publishes on the hub of the workspace it lives in, so a company doc lands on the company's site)
+### → v4.367.0 (your edge reaches Continental Works at every save and close, as counts, and the page says why)
+### → v4.368.0 (a granted Full Disk Access is never reported missing, --simulate is never a false green, and the close board holds while a frapp is waiting)
+### → v4.369.0 (A page can carry a password; the link you send opens it, and a company page lands on the company's site)
