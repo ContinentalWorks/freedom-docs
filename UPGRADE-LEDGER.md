@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.369.0**
+**Latest version: v4.370.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -509,3 +509,4 @@ Newest last.
 ### → v4.367.0 (your edge reaches Continental Works at every save and close, as counts, and the page says why)
 ### → v4.368.0 (a granted Full Disk Access is never reported missing, --simulate is never a false green, and the close board holds while a frapp is waiting)
 ### → v4.369.0 (A page can carry a password; the link you send opens it, and a company page lands on the company's site)
+### → v4.370.0 (your edge counts the code you wrote: built, net lines of code, is the fourth layer)
