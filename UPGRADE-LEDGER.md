@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.372.0**
+**Latest version: v4.373.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -512,3 +512,4 @@ Newest last.
 ### → v4.370.0 (your edge counts the code you wrote: built, net lines of code, is the fourth layer)
 ### → v4.371.0 (an ongoing project keeps its first step, the catch-up run stops leaving a stray file and offering you to yourself, and transcript scripts resolve without CLAUDE_PLUGIN_ROOT)
 ### → v4.372.0 (your edge timeline starts the week you joined Freedom)
+### → v4.373.0 (every number on your edge has commas)
