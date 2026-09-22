@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.384.0**
+**Latest version: v4.385.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -524,3 +524,4 @@ Newest last.
 ### → v4.382.0 (The public releases page stops falling behind)
 ### → v4.383.0 (Phone reviews reach your phone, and the close card waits for a frapp)
 ### → v4.384.0 (Landing a branch no longer calls a refused merge a conflict)
+### → v4.385.0 (Review pages keep a wrapped list item as one item, and drafts for your own review never go to your artifacts site)
