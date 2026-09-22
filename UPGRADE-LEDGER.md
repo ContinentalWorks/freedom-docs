@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.390.0**
+**Latest version: v4.391.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -530,3 +530,4 @@ Newest last.
 ### → v4.388.0 (Freedom's background jobs start from your home folder, so a busy Mac no longer wedges the frapp store or a scheduled session, and a store that is down says so)
 ### → v4.389.0 (A refusal from the worktree gate says which script it read the path out of)
 ### → v4.390.0 (Closing a session tells you what it earned on your edge, and links your profile)
+### → v4.391.0 (a release says when it is carrying changes its own entry does not name)
