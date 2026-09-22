@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.388.0**
+**Latest version: v4.389.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -528,3 +528,4 @@ Newest last.
 ### → v4.386.0 (catch-up stops filing phone numbers as people and resolves group threads, the overnight pass runs on busy machines, frapps show a live session, the doctor checks Freedom's own jobs, voice memos transcribe locally)
 ### → v4.387.0 (the secret scrubber withholds 'Pass:' and a password on the line under its label, and voice notes and other attachments reach every reader of pending messages)
 ### → v4.388.0 (Freedom's background jobs start from your home folder, so a busy Mac no longer wedges the frapp store or a scheduled session, and a store that is down says so)
+### → v4.389.0 (A refusal from the worktree gate says which script it read the path out of)
