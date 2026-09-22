@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.393.0**
+**Latest version: v4.394.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -533,3 +533,4 @@ Newest last.
 ### → v4.391.0 (a release says when it is carrying changes its own entry does not name)
 ### → v4.392.0 (a practice is now a Recurrent, and no workspace has to migrate for it)
 ### → v4.393.0 (Transcripts are named from when the conversation actually happened)
+### → v4.394.0 (Phone sessions no longer come to the desk on their own: taking one over was killing it on the phone. Ask to bring one over instead)
