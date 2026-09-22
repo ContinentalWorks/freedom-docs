@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.377.0**
+**Latest version: v4.378.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -517,3 +517,4 @@ Newest last.
 ### → v4.375.0 (Freeda reads anything aloud to you, free and on your own Mac, with the words lit as they are spoken)
 ### → v4.376.0 (Every built-in frapp has its own page in the docs, and a frapp change cannot ship without updating it)
 ### → v4.377.0 (wiki links name the reader, and the close card waits until the tab's work is done)
+### → v4.378.0 (Publishing refuses a page that carries someone's phone number, and installing a skill never rewrites a catalog you wrote by hand)
