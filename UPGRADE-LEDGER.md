@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.406.0**
+**Latest version: v4.407.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -547,3 +547,4 @@ Newest last.
 ### → v4.404.0 (Freedom's tools load in Codex, installs repair themselves, and skills stop running an old version after an update)
 ### → v4.405.0 (In Codex, Freeda gets her whole identity and your own rules, not the first and last few thousand characters)
 ### → v4.406.0 (The Next Step Meeting stops showing cards you already answered or closed earlier the same day)
+### → v4.407.0 (one page that always holds the best question your records are missing)
