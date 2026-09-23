@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.395.0**
+**Latest version: v4.396.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -535,3 +535,4 @@ Newest last.
 ### → v4.393.0 (Transcripts are named from when the conversation actually happened)
 ### → v4.394.0 (Phone sessions no longer come to the desk on their own: taking one over was killing it on the phone. Ask to bring one over instead)
 ### → v4.395.0 (every frapp that plays a sound now has a pause, a speed control and the words on screen)
+### → v4.396.0 (Freedom installs into Codex in one command, and its safeguards work there)
