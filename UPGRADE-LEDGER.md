@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.399.0**
+**Latest version: v4.401.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -540,3 +540,5 @@ Newest last.
 ### → v4.398.0 (the local API answers, and the converge installs the daemon behind it)
 ### → v4.398.1 (read.contacts works: launchd's PATH is not your shell's)
 ### → v4.399.0 (a running test suite protects its worktree, and a release says when it may have shipped half a change)
+### → v4.400.0 (the Next Step Meeting offers openings again on an older gog, and says why in words when the calendar refuses)
+### → v4.401.0 (a credential sent as a variable name no longer reaches your files)
