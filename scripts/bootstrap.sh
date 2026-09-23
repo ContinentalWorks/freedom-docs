@@ -254,11 +254,27 @@ run() { # run <command...> — executes, or narrates under --dry-run
 #
 # --dangerously-skip-permissions is still refused. It is the same posture
 # spelled as a warning, and test-setup-scripts.sh asserts it never appears.
+#
+# The mode is READ rather than baked in, since #227. bootstrap usually runs on a
+# machine with no ~/.freedom/config.json yet, so in the ordinary case this IS the
+# default; what it buys is the re-run. An operator who has recorded `auto` and
+# re-bootstraps is not quietly put back on bypass by an installer that predates
+# their decision. The parse matches lib/freedom-permission-mode.mjs exactly, and
+# test-setup-scripts.sh checks that rather than trusting it.
+freedom_mode() {
+  # `:-` is load-bearing: this script runs under `set -u`, and a bare expansion of an unset
+  # override aborted the function mid-way and emitted an EMPTY --permission-mode.
+  local m="${FREEDOM_PERMISSION_MODE:-}"
+  [ -z "$m" ] && m="$(sed -n 's/.*"permissionMode"[[:space:]]*:[[:space:]]*"\([A-Za-z]*\)".*/\1/p' \
+    "${FREEDOM_HOME:-$HOME}/.freedom/config.json" 2>/dev/null | head -1)"
+  case "$m" in bypassPermissions|acceptEdits|auto|default|plan) ;; *) m=bypassPermissions ;; esac
+  printf '%s' "$m"
+}
 # One prompt, used by the exec at the end and by --print-handoff, so the two cannot disagree.
 HANDOFF_PROMPT="Read \$INSTALL_SKILL_FILE and follow it exactly. It is the Freedom install skill. It is run TOGETHER with the person who invited them, who should be on a call or in the room; the skill's first section asks, and if they are not, you stop there and say so, running nothing."
 handoff_prompt() { printf '%s' "${HANDOFF_PROMPT//\$INSTALL_SKILL_FILE/$INSTALL_SKILL_FILE}"; }
 handoff_cmd() {
-  printf 'claude --permission-mode bypassPermissions "%s"\n' "$(handoff_prompt)"
+  printf 'claude --permission-mode %s "%s"\n' "$(freedom_mode)" "$(handoff_prompt)"
 }
 
 if [[ "$PRINT_HANDOFF" -eq 1 ]]; then
@@ -464,4 +480,4 @@ fi
 # formality. A new operator followed the skill alone on 2026-09-19, dead-ended at the editor
 # and filed four defects from a bare terminal in his first hour (Gary: "let's not allow people
 # to manually install").
-exec claude --permission-mode bypassPermissions "$(handoff_prompt)"
+exec claude --permission-mode "$(freedom_mode)" "$(handoff_prompt)"
