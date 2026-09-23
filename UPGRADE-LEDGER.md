@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.398.0**
+**Latest version: v4.398.1**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -538,3 +538,4 @@ Newest last.
 ### → v4.396.0 (Freedom installs into Codex in one command, and its safeguards work there)
 ### → v4.397.0 (iMessage capture stops dropping your biggest threads)
 ### → v4.398.0 (the local API answers, and the converge installs the daemon behind it)
+### → v4.398.1 (read.contacts works: launchd's PATH is not your shell's)
