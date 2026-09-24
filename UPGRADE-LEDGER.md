@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.410.0**
+**Latest version: v4.411.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -552,3 +552,4 @@ Newest last.
 ### → v4.408.0 (Interview me, one question at a time, is now a skill every operator has)
 ### → v4.409.0 (documents land where documents live again)
 ### → v4.410.0 (reports are filed only from a current copy of Freedom's development code)
+### → v4.411.0 (Archiving a project really does stage its link fixes, and a new wiki page can set something off)
