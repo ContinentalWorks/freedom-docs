@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.416.0**
+**Latest version: v4.417.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -558,3 +558,4 @@ Newest last.
 ### → v4.414.0 (The full test suite runs nightly, a flaky test no longer restarts a release, and a restarted Next Step Meeting reuses its tab)
 ### → v4.415.0 (published pages can carry a subtitle and be marked confidential)
 ### → v4.416.0 (Links that rely on what a file said now record the version they read, and resuming a project tells you when that file has changed since)
+### → v4.417.0 (resume-after-disconnect picks up everything a dropped connection stranded)
