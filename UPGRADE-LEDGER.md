@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.420.0**
+**Latest version: v4.421.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -562,3 +562,4 @@ Newest last.
 ### → v4.418.0 (Projects name the skills that move them forward)
 ### → v4.419.0 (A project can have subprojects: name the project it serves and every surface shows it)
 ### → v4.420.0 (Every frapp records the same way: one floppy save, your words appear live as you talk, and a review you read without comment still counts)
+### → v4.421.0 (every skill map on getfreedom.wiki fits a phone screen)
