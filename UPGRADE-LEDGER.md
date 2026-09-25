@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.424.0**
+**Latest version: v4.424.1**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -566,3 +566,4 @@ Newest last.
 ### → v4.422.0 (photos people text you are listed by name and can be opened from any session)
 ### → v4.423.0 (Published pages can take answers from readers: publish-artifact now forwards a state: block)
 ### → v4.424.0 (Telegram Desktop chats can be read without Telegram running, and the publish-artifact map covers reader answers)
+### → v4.424.1 (Opening several Freedom tabs at once no longer starts several background warms)
