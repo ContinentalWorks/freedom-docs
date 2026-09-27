@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.427.0**
+**Latest version: v4.428.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -570,3 +570,4 @@ Newest last.
 ### → v4.425.0 (A runaway document can no longer hang the checkup, new documents are created with their header in one step, and recorder notes left behind are saved)
 ### → v4.426.0 (Skills always run the newest installed copy of their scripts, freedom --version no longer opens a session, and long read-aloud pages publish)
 ### → v4.427.0 (Every choice on a board says who does it, You or Freeda, and a batch of fixes from your reports)
+### → v4.428.0 (The session opener and context block say recurrents, never routines)
