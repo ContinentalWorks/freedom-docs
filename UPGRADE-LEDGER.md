@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.425.0**
+**Latest version: v4.426.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -568,3 +568,4 @@ Newest last.
 ### → v4.424.0 (Telegram Desktop chats can be read without Telegram running, and the publish-artifact map covers reader answers)
 ### → v4.424.1 (Opening several Freedom tabs at once no longer starts several background warms)
 ### → v4.425.0 (A runaway document can no longer hang the checkup, new documents are created with their header in one step, and recorder notes left behind are saved)
+### → v4.426.0 (Skills always run the newest installed copy of their scripts, freedom --version no longer opens a session, and long read-aloud pages publish)
