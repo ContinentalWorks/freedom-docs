@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.430.0**
+**Latest version: v4.431.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -573,3 +573,4 @@ Newest last.
 ### → v4.428.0 (The session opener and context block say recurrents, never routines)
 ### → v4.429.0 (Set up a plugin: one standard for any plugin, and it can add the missing pieces to a repo you already have)
 ### → v4.430.0 (Freedom now tells Continental Works when each session opens and closes, and counts edge points per day)
+### → v4.431.0 (Your edge now has a trophy case, a streak and a ranking, and share-my-wins turns any stretch of time into a page you can send)
