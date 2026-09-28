@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.433.0**
+**Latest version: v4.434.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -576,3 +576,4 @@ Newest last.
 ### → v4.431.0 (Your edge now has a trophy case, a streak and a ranking, and share-my-wins turns any stretch of time into a page you can send)
 ### → v4.432.0 (Turning data sharing off now says so once, so Continental Works can tell opting out from going quiet)
 ### → v4.433.0 (Logging out now says so once, so the usage view shows who logged out)
+### → v4.434.0 (Zoom cloud and Google Meet recordings are now capture sources: catch up finds, downloads and transcribes them, and never captures one call twice)
