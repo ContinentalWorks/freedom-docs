@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.439.0**
+**Latest version: v4.440.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -582,3 +582,4 @@ Newest last.
 ### → v4.436.0 (Every page you publish is read aloud by default; `voice: none` turns it off)
 ### → v4.437.0 (A link texted to you or anyone waits until its preview can load, instead of arriving as a bare address)
 ### → v4.439.0 (Freeda is your chief of agents, workhorse and supersuit engineering partner, and links the words she uses to their pages)
+### → v4.440.0 (Dictating a note on your phone redraws only the box you are talking into, not the whole page)
