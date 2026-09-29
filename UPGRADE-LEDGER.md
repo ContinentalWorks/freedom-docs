@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.443.0**
+**Latest version: v4.444.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -586,3 +586,4 @@ Newest last.
 ### → v4.441.0 (Frapps wear Daylight: cream paper, the six-stripe ribbon, teal buttons and Fraunces headings, day and night)
 ### → v4.442.0 (A room for someone working through a life project, served by their own Mac)
 ### → v4.443.0 (Links Freeda gives you in the chat are named and tappable, never a bare URL)
+### → v4.444.0 (Freedom refuses to run on a machine that is not linked to your account, whichever way it is started)
