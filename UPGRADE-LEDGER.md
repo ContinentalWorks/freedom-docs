@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.449.0**
+**Latest version: v4.450.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -592,3 +592,4 @@ Newest last.
 ### → v4.447.0 (Sending to a group and reading messages work on a Mac without Full Disk Access, plus a night of fixes from Fritz's reports)
 ### → v4.448.0 (The Checkpoint card leads with 'Freeda saves and keeps building (Recommended)', Freedom is one app, and person records are reached through one door)
 ### → v4.449.0 (Frapp links you are texted open on your own artifacts site, in your own look, when you have one)
+### → v4.450.0 (After you type close, the Checkpoint card recommends closing)
