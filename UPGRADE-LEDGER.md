@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.447.0**
+**Latest version: v4.448.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -590,3 +590,4 @@ Newest last.
 ### → v4.445.0 (Opting out of analytics keeps a required floor of counts; PRs must grant the license; no silent iMessage sends to Android)
 ### → v4.446.0 (Frapps report opened, answered, abandoned and failed, so the ones that break or get ignored show up)
 ### → v4.447.0 (Sending to a group and reading messages work on a Mac without Full Disk Access, plus a night of fixes from Fritz's reports)
+### → v4.448.0 (The Checkpoint card leads with 'Freeda saves and keeps building (Recommended)', Freedom is one app, and person records are reached through one door)
