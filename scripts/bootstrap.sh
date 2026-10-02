@@ -2,7 +2,7 @@
 # bootstrap.sh — gets the agent alive, then gets out of the way.
 #
 # This script does FOUR things: Homebrew, Node + Git + jq, Claude Code, and the
-# handoff. Everything else about setting up Freedom — VS Code, the capture
+# handoff. Everything else about setting up Freedom — the Claude app, the capture
 # stack, the GitHub login, your workspace, the plugin, hourly sync, the
 # launcher — is done afterwards by the agent, following the install skill it
 # fetches at the end.

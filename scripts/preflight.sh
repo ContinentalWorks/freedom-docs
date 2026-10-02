@@ -132,10 +132,11 @@ check_tool node "Node.js" --version || true
 check_tool git "Git" --version || true
 check_tool gh "GitHub CLI" --version || true
 
-if [[ -d "$APPS_DIR/Visual Studio Code.app" ]] || command -v code >/dev/null 2>&1; then
-  row "$PASS" "VS Code" "installed"
+# The Claude app is where Freedom sessions run (its Code section, opened on the workspace).
+if [[ -d "$APPS_DIR/Claude.app" ]]; then
+  row "$PASS" "Claude app" "installed"
 else
-  row "$WARN" "VS Code" "not installed — the bootstrap script will install it"
+  row "$WARN" "Claude app" "not installed: brew install --cask claude"
 fi
 
 check_tool claude "Claude Code" --version || true
