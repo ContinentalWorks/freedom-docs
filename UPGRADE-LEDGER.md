@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.451.0**
+**Latest version: v4.452.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -595,3 +595,4 @@ Newest last.
 ### → v4.450.0 (After you type close, the Checkpoint card recommends closing)
 ### → v4.450.1 (a text whose link preview cannot build no longer goes out twice)
 ### → v4.451.0 (The Freedom editor is retired: work in the Claude app's Code section or the Codex app, and the update takes the editor off your Mac)
+### → v4.452.0 (Session names lead with the project's nickname and say what is happening now)
