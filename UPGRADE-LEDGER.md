@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v4.450.1**
+**Latest version: v4.451.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -594,3 +594,4 @@ Newest last.
 ### → v4.449.0 (Frapp links you are texted open on your own artifacts site, in your own look, when you have one)
 ### → v4.450.0 (After you type close, the Checkpoint card recommends closing)
 ### → v4.450.1 (a text whose link preview cannot build no longer goes out twice)
+### → v4.451.0 (The Freedom editor is retired: work in the Claude app's Code section or the Codex app, and the update takes the editor off your Mac)
