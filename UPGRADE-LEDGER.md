@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v5.0.0**
+**Latest version: v5.0.1**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -599,3 +599,4 @@ Newest last.
 ### → v4.453.0 (operator fixes: Gmail backfills finish, iMessage history behind a checkpoint gets filed, interview answers file into your profile, review voice takes wake the session)
 ### → v4.453.1 (the interview page's play button no longer sits on top of the time)
 ### → v5.0.0 (Your people are folders and your profile is self: the update converts both only when safe)
+### → v5.0.1 (New Codex chats keep the Full access default)
