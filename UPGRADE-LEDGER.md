@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v5.0.2**
+**Latest version: v5.0.3**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -601,3 +601,4 @@ Newest last.
 ### → v5.0.0 (Your people are folders and your profile is self: the update converts both only when safe)
 ### → v5.0.1 (New Codex chats keep the Full access default)
 ### → v5.0.2 (Relationship recall is now a shared Freedom skill)
+### → v5.0.3 (Safer skill maps, reviews and self notifications)
