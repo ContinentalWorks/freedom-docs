@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v5.2.0**
+**Latest version: v5.2.1**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -605,3 +605,4 @@ Newest last.
 ### → v5.0.4 (Reviews keep working through updates)
 ### → v5.1.0 (Question cards work natively in Codex)
 ### → v5.2.0 (Projects carry a verified picture, evidence and sharing permission)
+### → v5.2.1 (Repair project status without weakening closure checks)
