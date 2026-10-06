@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v5.4.1**
+**Latest version: v5.4.2**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -611,3 +611,4 @@ Newest last.
 ### → v5.3.0 (a skill's goldens now come only from real runs you accepted, and a correction becomes the skill's miss)
 ### → v5.4.0 (a skill's top level is now the misses it fixed, evals that pass, and real runs per model; stories moved out of the instructions)
 ### → v5.4.1 (The always-on phone agent keeps its macOS permissions across Claude Code updates)
+### → v5.4.2 (Remote control stays up: spin-up finds the always-on agent, a failed reload is loud and repaired, the keeper stops restarting it; texts to yourself keep their tailnet link; regression evals)
