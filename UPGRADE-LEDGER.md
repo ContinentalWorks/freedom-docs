@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v5.5.2**
+**Latest version: v5.6.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -616,3 +616,4 @@ Newest last.
 ### → v5.5.0 (A weekly prune brings your open projects back down to the ones you are moving, from one page on your phone)
 ### → v5.5.1 (onboarding stops naming the retired editor and points new operators at the Claude app and its mic)
 ### → v5.5.2 (Update Freedom now brings Codex's copy of Freedom up to date too)
+### → v5.6.0 (the overnight pass waits for an idle Mac, clean-up finds what is filling your disk, and WhatsApp group sends land where they should)
