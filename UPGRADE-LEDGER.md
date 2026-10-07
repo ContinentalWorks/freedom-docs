@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v5.7.0**
+**Latest version: v5.8.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -618,3 +618,4 @@ Newest last.
 ### → v5.5.2 (Update Freedom now brings Codex's copy of Freedom up to date too)
 ### → v5.6.0 (the overnight pass waits for an idle Mac, clean-up finds what is filling your disk, and WhatsApp group sends land where they should)
 ### → v5.7.0 (Conversation archives: transcript.md and opt-in migration)
+### → v5.8.0 (Your Mac texts you when a permission popup is blocking your sessions, and you can click it from your phone)
