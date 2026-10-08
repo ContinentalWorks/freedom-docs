@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v6.3.0**
+**Latest version: v6.3.1**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -623,3 +623,4 @@ Newest last.
 ### → v6.1.0 (a workspace that drifted from GitHub merges itself on the update, and a broken shortcut can no longer crash it)
 ### → v6.2.0 (catch-up files long calls and its own recordings, and the Next Step Meeting walks on your phone)
 ### → v6.3.0 (Your self/ folder has a written standard, and the doctor checks it and names any tool reading your files without saying so)
+### → v6.3.1 (Your own relationship words in people/README.md stop the people check from warning)
