@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v6.0.0**
+**Latest version: v6.1.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -620,3 +620,4 @@ Newest last.
 ### → v5.7.0 (Conversation archives: transcript.md and opt-in migration)
 ### → v5.8.0 (Your Mac texts you when a permission popup is blocking your sessions, and you can click it from your phone)
 ### → v6.0.0 (Every workspace converts on the update: transcripts, folders, projects, skills and saves)
+### → v6.1.0 (a workspace that drifted from GitHub merges itself on the update, and a broken shortcut can no longer crash it)
