@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v6.5.0**
+**Latest version: v6.5.1**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -626,3 +626,4 @@ Newest last.
 ### → v6.3.1 (Your own relationship words in people/README.md stop the people check from warning)
 ### → v6.4.0 (Review pages offer Comment when you highlight text, and mini apps run on the Mac)
 ### → v6.5.0 (Subprojects live inside their parent project's folder, and the weekly prune sees parked projects)
+### → v6.5.1 (The update moves subprojects inside their parent folders (the script v6.5.0 left out))
