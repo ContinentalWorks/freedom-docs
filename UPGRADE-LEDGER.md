@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v6.7.0**
+**Latest version: v6.8.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -631,3 +631,4 @@ Newest last.
 ### → v6.6.0 (Superprojects: every finite project is born with a plan map, and Freeda tells you whether it is on track)
 ### → v6.6.1 (Message imports get a session you can watch, sends stop reading your whole history, and the plan engine is renamed superprojects)
 ### → v6.7.0 (The Helm: one command sets up your own app on your own Google, Vercel and Mac, and checks it end to end)
+### → v6.8.0 (Reviews live in your Helm: every note saves the moment you make it, Mac asleep or not; the Helm skill is now create-or-update-my-helm)
