@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v6.11.3**
+**Latest version: v6.12.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -638,3 +638,4 @@ Newest last.
 ### → v6.11.1 (A superproject you already moved keeps its old path working while others still wait to move)
 ### → v6.11.2 (An old path into a subproject, and a link saved as a file, keep working after the superprojects move)
 ### → v6.11.3 (superwrite books keep your review edits, and its next step always names one that works)
+### → v6.12.0 (Answer the infinite interview from the Helm: answers save on your phone with the Mac asleep and land in the interview's ledger)
