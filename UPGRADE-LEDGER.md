@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v6.11.0**
+**Latest version: v6.11.1**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -635,3 +635,4 @@ Newest last.
 ### → v6.9.0 (Capture setup is part of setup-and-update; review and tap sessions close themselves when their work is done)
 ### → v6.10.0 (Projects become superprojects, and the update moves your workspace across)
 ### → v6.11.0 (superwrite: say what you are trying to write, and get a draft that already passed every check)
+### → v6.11.1 (A superproject you already moved keeps its old path working while others still wait to move)
