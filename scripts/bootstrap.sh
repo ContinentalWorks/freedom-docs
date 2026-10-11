@@ -285,8 +285,9 @@ fi
 # ---------- Platform gate ----------
 
 if [[ "$(uname -s)" != "Darwin" ]]; then
-  echo "This bootstrap currently supports macOS only."
-  echo "On Windows or Linux, follow the manual steps at:"
+  echo "This bootstrap is for macOS."
+  echo "On Windows, run scripts/bootstrap.ps1 in PowerShell instead."
+  echo "On Linux, follow the manual steps at:"
   echo "  https://supersuit.wiki/freedom/supersuit-up-workshop/install-your-tools"
   exit 1
 fi
