@@ -9,7 +9,10 @@
 # binaries itself. Idempotent: every step checks before it acts.
 #
 # Usage, in PowerShell:
-#   irm https://getfreedom.wiki/bootstrap.ps1 | iex      (the normal path, once hosted)
+#   irm https://raw.githubusercontent.com/ContinentalWorks/freedom-docs/main/scripts/bootstrap.ps1 -OutFile $HOME\freedom-bootstrap.ps1
+#   powershell -ExecutionPolicy Bypass -File $HOME\freedom-bootstrap.ps1     (the normal path)
+#   Never `irm ... | iex`: `exit` inside an iex'd script closes the PowerShell window, so a
+#   failure would vanish before anyone could read it.
 #   .\bootstrap.ps1 -DryRun          print what would happen, change nothing
 #   .\bootstrap.ps1 -NoLaunch        stop before the handoff
 #   .\bootstrap.ps1 -PrintHandoff    show the handoff command and exit
