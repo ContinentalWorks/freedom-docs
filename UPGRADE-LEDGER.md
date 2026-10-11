@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v6.13.0**
+**Latest version: v6.14.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -640,3 +640,4 @@ Newest last.
 ### → v6.11.3 (superwrite books keep your review edits, and its next step always names one that works)
 ### → v6.12.0 (Answer the infinite interview from the Helm: answers save on your phone with the Mac asleep and land in the interview's ledger)
 ### → v6.13.0 (Seven frapps and two skills retired, and the Mac's frapp store is now called your Helm server)
+### → v6.14.0 (Reviews open in the Helm on your own Mac when you run one)
