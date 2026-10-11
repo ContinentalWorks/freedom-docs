@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v6.16.0**
+**Latest version: v6.17.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -643,3 +643,4 @@ Newest last.
 ### → v6.14.0 (Reviews open in the Helm on your own Mac when you run one)
 ### → v6.15.0 (A Mac whose Helm runs on the Mac can retire its hosted Helm: nothing there calls it again)
 ### → v6.16.0 (The Helm now runs on your own Mac, installed by create-or-update-my-helm)
+### → v6.17.0 (Freedom stops when your install is a week behind, and names the one command that fixes it)
