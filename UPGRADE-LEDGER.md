@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v6.25.0**
+**Latest version: v6.26.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -654,3 +654,4 @@ Newest last.
 ### → v6.23.1 (A numbered version on a published page now goes up by itself when its words change)
 ### → v6.24.0 (Everything that tells you something goes through one notifier: one buzz per draft, a promise kept even when the session is gone, and no old scheduled text fires a year late)
 ### → v6.25.0 (Per-reader pages, receipts that say what was confirmed, and four new reaches for personal frapps)
+### → v6.26.0 (A change to your own tile app is live the next time you open it, with its own test in seconds)
