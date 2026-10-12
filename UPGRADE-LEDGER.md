@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v6.22.0**
+**Latest version: v6.23.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -650,3 +650,4 @@ Newest last.
 ### → v6.20.0 (The notifier: one service that reaches you wherever you can be reached, with a ledger of every attempt)
 ### → v6.21.0 (Notifier texts and emails reach you when your config names your workspace with a ~)
 ### → v6.22.0 (The notifier actually texts you: its check that texting works no longer fails on every Mac)
+### → v6.23.0 (A permission popup on your Mac reaches your phone with a picture of the screen and one tap into it)
