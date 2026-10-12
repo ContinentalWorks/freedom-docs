@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v6.20.0**
+**Latest version: v6.21.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -648,3 +648,4 @@ Newest last.
 ### → v6.18.0 (a note bar on a phone stays on screen with the keyboard up while you scroll)
 ### → v6.19.0 (The update stop now works, and it counts how long you have been behind)
 ### → v6.20.0 (The notifier: one service that reaches you wherever you can be reached, with a ledger of every attempt)
+### → v6.21.0 (Notifier texts and emails reach you when your config names your workspace with a ~)
