@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v6.28.0**
+**Latest version: v6.29.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -657,3 +657,4 @@ Newest last.
 ### → v6.26.0 (A change to your own tile app is live the next time you open it, with its own test in seconds)
 ### → v6.27.0 ("Frapp" is now "tile app" everywhere, with the old skill names forwarding for one release, and a Helm change no longer waits on Freedom's suite)
 ### → v6.28.0 (Conversations say where they happened, Zoom and Granola recordings are dated correctly, held sends expire, and a failed Helm install tells you why)
+### → v6.29.0 (Freeda's inbox: suggestions from your apps land in one place on your Mac, and nothing starts without your yes)
