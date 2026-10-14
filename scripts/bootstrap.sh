@@ -316,6 +316,27 @@ ask_banners
 
 # ---------- Step 1: Homebrew ----------
 
+# Ask for the Mac password BEFORE the Homebrew installer runs, because that installer cannot.
+#
+# It is run with NONINTERACTIVE=1 below, deliberately: its interactive form stops at "Press
+# RETURN/ENTER to continue or any other key to abort", and in the Claude app's terminal panel
+# the keypress does not register as Enter, so it cancels itself (freedom-dev#585). But
+# NONINTERACTIVE=1 also makes it call `sudo -n`, which never prompts. On a Mac with no Homebrew
+# the prefix lives under a folder only an administrator can create, so with no password already
+# given it stops with "Insufficient permissions to install Homebrew". The line printed just
+# above the install has always promised a password prompt; nothing was asking.
+#
+# `sudo -v` asks once and keeps the answer for the installer that follows in this terminal.
+# Never fatal: if it cannot ask (no terminal) or they are not an administrator, Homebrew's own
+# check runs next and says so in its own words, which is exactly what happened before.
+prime_sudo() {
+  sudo -n -v 2>/dev/null && return 0          # already answered in this terminal
+  sudo -v && return 0
+  echo "    could not confirm your Mac password here; carrying on, and Homebrew"
+  echo "    will say so if it needs it."
+  return 0
+}
+
 step_begin "Homebrew (the Mac package manager)" \
   "installing the tool that installs everything else on a Mac" \
   "a new folder for Homebrew, and one line added to ~/.zprofile so your shell can find it" \
@@ -338,6 +359,7 @@ else
   if [[ "$DRY_RUN" -eq 1 ]]; then
     echo "    [dry-run] would run the official Homebrew install script"
   else
+    prime_sudo
     NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" || on_fail
     if [[ -x /opt/homebrew/bin/brew ]]; then BREW_BIN="/opt/homebrew/bin/brew"; else BREW_BIN="/usr/local/bin/brew"; fi
   fi

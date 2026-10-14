@@ -154,6 +154,32 @@ done
 
 header "ACCOUNTS"
 
+# The folder the GitHub login saves into, checked BEFORE anyone logs in.
+#
+# `gh auth login` keeps its login under ~/.config/gh. When ~/.config exists and this user
+# cannot write to it (an installer run with sudo years ago leaves it owned by root), the
+# browser flow completes, gh prints "✓ Authentication complete", and only then fails with
+# `mkdir ~/.config/gh: permission denied`. The success lines print BEFORE the failure, so it
+# reads as a login that worked, and the next private-repo step fails looking like missing
+# access (freedom-dev#583). A folder that does not exist yet is fine: gh creates it.
+CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
+CONFIG_SHOWN="$CONFIG_DIR"   # shown, and pasted back, the way a person writes it
+[[ "$CONFIG_DIR" == "$HOME"/* ]] && CONFIG_SHOWN='~'"${CONFIG_DIR#"$HOME"}"
+CONFIG_LOCKED=""   # the folder they cannot write to, if there is one
+CONFIG_FIX=""
+if [[ -e "$CONFIG_DIR/gh" && ! -w "$CONFIG_DIR/gh" ]]; then
+  CONFIG_LOCKED="$CONFIG_SHOWN/gh"
+  CONFIG_FIX="sudo chown -R \"\$USER\":staff $CONFIG_LOCKED"
+elif [[ ! -e "$CONFIG_DIR/gh" && -e "$CONFIG_DIR" && ! -w "$CONFIG_DIR" ]]; then
+  CONFIG_LOCKED="$CONFIG_SHOWN"
+  CONFIG_FIX="sudo chown \"\$USER\":staff $CONFIG_LOCKED"
+fi
+if [[ -n "$CONFIG_FIX" ]]; then
+  row "$FAIL" "Settings folder" "$CONFIG_LOCKED is not writable by you, so the GitHub login would report success and then fail to save. Fix: $CONFIG_FIX"
+elif [[ -e "$CONFIG_DIR" ]]; then
+  row "$PASS" "Settings folder" "$CONFIG_SHOWN is writable"
+fi
+
 GH_READY=0
 if command -v gh >/dev/null 2>&1 && gh auth status >/dev/null 2>&1; then
   GH_USER="$(gh api user -q .login 2>/dev/null || echo "")"
@@ -168,6 +194,13 @@ fi
 header "YOUR CHECKLIST FOR TONIGHT (no script can do these)"
 
 N=1
+if [[ -n "$CONFIG_FIX" ]]; then
+  echo "  $N. Make your settings folder yours again, BEFORE you log in to GitHub."
+  echo "     Paste this into Terminal and type your Mac password when asked"
+  echo "     (your typing is invisible; that is normal):"
+  echo "       $CONFIG_FIX"
+  N=$((N + 1))
+fi
 if [[ "$OS_MAJOR" -lt 15 ]]; then
   echo "  $N. Run Software Update (System Settings > General > Software Update)."
   echo "     Plug in your charger and let it finish. Do NOT start the workshop"
