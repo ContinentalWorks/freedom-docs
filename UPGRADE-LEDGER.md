@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v6.31.0**
+**Latest version: v6.32.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -661,3 +661,4 @@ Newest last.
 ### → v6.29.1 (Freeda's reading of new reports runs as a background worker, so it starts on any Mac)
 ### → v6.30.0 (Supersuit rebrand: Pluma, dual-read, the /supersuit: alias, and the com.supersuit machine move)
 ### → v6.31.0 (relabel: hand off the stop+start of a job the caller runs under, and 1 more change)
+### → v6.32.0 (send-message: a WhatsApp Web send that landed is confirmed, and unknown is the last resort, and 10 more changes)
