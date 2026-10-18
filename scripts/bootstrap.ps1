@@ -5,8 +5,8 @@
 # Node.js, Git for Windows (which brings Git Bash, the shell Claude Code runs its hooks through),
 # jq, Claude Code, and the handoff. Everything else is the install skill it fetches at the end.
 #
-# Official installers only: winget packages, and Claude Code's own install.ps1. Fetches no
-# binaries itself. Idempotent: every step checks before it acts.
+# Official installers only: winget packages (Claude Code included), and Claude Code's own
+# install.ps1 only as the fallback when winget cannot install it. Fetches no binaries itself. Idempotent: every step checks before it acts.
 #
 # Usage, in PowerShell:
 #   irm https://raw.githubusercontent.com/ContinentalWorks/freedom-docs/main/scripts/bootstrap.ps1 -OutFile $HOME\freedom-bootstrap.ps1
@@ -23,9 +23,13 @@ param([switch]$DryRun, [switch]$NoLaunch, [switch]$PrintHandoff)
 
 $ErrorActionPreference = "Stop"
 
-$InstallSkillUrl = if ($env:FREEDOM_INSTALL_SKILL_URL) { $env:FREEDOM_INSTALL_SKILL_URL } else { "https://www.getfreedom.wiki/skills/install-freedom-windows/SKILL.md" }
-# www, never the bare domain: getfreedom.wiki answers with a 308 to www, and Windows PowerShell
-# 5.1's Invoke-WebRequest does not follow a 308 (curl on the Mac does). Measured 2026-10-10.
+$InstallSkillUrl = if ($env:FREEDOM_INSTALL_SKILL_URL) { $env:FREEDOM_INSTALL_SKILL_URL } else { "https://wiki.supersuit.co/skills/install-freedom-windows/SKILL.md" }
+# Never a URL that redirects: Windows PowerShell 5.1's Invoke-WebRequest does not follow a 308 (curl
+# on the Mac does; measured 2026-10-10). On 2026-10-17 getfreedom.wiki began answering 308 to
+# wiki.supersuit.co and every Windows install died here, so the default is the host that serves the
+# file, the old URL is a fallback, and a Location header on any failure is followed by hand.
+$InstallSkillUrls = @($InstallSkillUrl)
+if (-not $env:FREEDOM_INSTALL_SKILL_URL) { $InstallSkillUrls += "https://www.getfreedom.wiki/skills/install-freedom-windows/SKILL.md" }
 $InstallSkillFile = Join-Path $HOME ".freedom-install.md"
 $LogFile = Join-Path $HOME ".freedom-setup.log"
 
@@ -47,7 +51,7 @@ function Freedom-Mode {
 }
 
 # The same words bootstrap.sh hands over, so both installs open the same conversation.
-$HandoffPrompt = "Read $InstallSkillFile and follow it exactly. It is the Freedom install skill. It is run TOGETHER with the person who invited them, who should be on a call or in the room; the skill's first section asks, and if they are not, you stop there and say so, running nothing."
+$HandoffPrompt = "Read $InstallSkillFile and follow it exactly. It is the Supersuit install skill. It is run TOGETHER with the person who invited them, who should be on a call or in the room; the skill's first section asks, and if they are not, you stop there and say so, running nothing."
 function Handoff-Command { return ('claude --permission-mode {0} "{1}"' -f (Freedom-Mode), $HandoffPrompt) }
 
 if ($PrintHandoff) { Handoff-Command; exit 0 }
@@ -90,7 +94,7 @@ function Winget-Install([string]$id, [string]$label) {
 }
 
 Write-Host "=================================================="
-Write-Host "  Freedom BOOTSTRAP (Windows)"
+Write-Host "  Supersuit BOOTSTRAP (Windows)"
 if ($DryRun) { Write-Host "  DRY RUN: nothing will be installed or changed." }
 Write-Host "  Four steps, then your agent takes over."
 Write-Host "  Log: $LogFile"
@@ -105,7 +109,7 @@ if (-not (Have "winget")) {
   Fail "winget (the Windows package manager) is missing. Install 'App Installer' from the Microsoft Store, then run this again."
 }
 
-Step "Node.js and Git (what the harness runs on)" "Git for Windows brings Git Bash, which Claude Code runs Freedom's hooks through."
+Step "Node.js and Git (what the harness runs on)" "Git for Windows brings Git Bash, which Claude Code runs Supersuit's hooks through."
 if (Have "node") { Write-Host "    node already installed: $(node --version)" } else { Winget-Install "OpenJS.NodeJS.LTS" "Node.js" }
 if (Have "git") { Write-Host "    git already installed: $(git --version)" } else { Winget-Install "Git.Git" "Git for Windows" }
 if (Have "jq") { Write-Host "    jq already installed" } else { Winget-Install "jqlang.jq" "jq" }
@@ -122,7 +126,7 @@ function Real-Python3 {
   if (-not (Have "python3")) { return $false }
   try { $v = & python3 --version 2>&1; return ($LASTEXITCODE -eq 0 -and "$v" -match "^Python 3") } catch { return $false }
 }
-Step "Python 3 (what many of Freedom's scripts run on)" "Python from winget, and a python3 command that is the real thing rather than the Store shortcut."
+Step "Python 3 (what many of Supersuit's scripts run on)" "Python from winget, and a python3 command that is the real thing rather than the Store shortcut."
 if (Real-Python3) {
   Write-Host "    python3 already works: $(python3 --version 2>&1)"
 } elseif ($DryRun) {
@@ -148,35 +152,90 @@ if (Real-Python3) {
   Write-Host "    python3 works: $(python3 --version 2>&1)"
 }
 
-Step "Claude Code (the agent)" "the agent that does the rest of the setup, from Anthropic's own Windows installer."
+# Claude Code from winget first, and Anthropic's install.ps1 only when winget cannot do it. Live on a
+# Dell, 2026-10-17: `irm https://claude.ai/install.ps1 | iex` died with "Failed to download binary:
+# The process cannot access the file ...\.claude\downloads\claude-2.1.302-win32-x64.exe because it
+# is being used by another process", while `winget install Anthropic.ClaudeCode` fetched the same
+# 2.1.302 cleanly. Gary: "Install using winget moving forward. Irm flakier."
+# winget puts claude.exe behind a link in WinGet\Links and adds that folder to the User PATH, which
+# this session has not read; Refresh-Path reads it, and Find-WingetClaude looks in the folders
+# themselves when the PATH entry is missing.
+function Find-WingetClaude {
+  $dirs = @(
+    (Join-Path $env:LOCALAPPDATA "Microsoft\WinGet\Links"),
+    (Join-Path $env:ProgramFiles "WinGet\Links")
+  )
+  foreach ($d in $dirs) { if ($d -and (Test-Path (Join-Path $d "claude.exe"))) { return $d } }
+  $pkg = Get-ChildItem -Path (Join-Path $env:LOCALAPPDATA "Microsoft\WinGet\Packages") -Filter claude.exe -Recurse -Depth 2 -ErrorAction SilentlyContinue | Where-Object { $_.FullName -match "Anthropic\.ClaudeCode" } | Select-Object -First 1
+  if ($pkg) { return $pkg.DirectoryName }
+  return $null
+}
+# Put a folder on the User PATH (persisted, so a new window finds it) and on this session's.
+function Add-UserPath([string]$dir) {
+  $userPath = [Environment]::GetEnvironmentVariable("Path", "User")
+  if (($userPath -split ";") -notcontains $dir) {
+    [Environment]::SetEnvironmentVariable("Path", (($userPath.TrimEnd(";") + ";" + $dir).TrimStart(";")), "User")
+    Write-Host "    added $dir to your PATH so new windows find claude"
+    Log "added $dir to User PATH"
+  }
+  Refresh-Path
+}
+Step "Claude Code (the agent)" "the agent that does the rest of the setup, installed with winget (Anthropic's own Windows installer only if winget cannot)."
 if (Have "claude") {
   Write-Host "    claude already installed: $(claude --version)"
 } elseif ($DryRun) {
-  Write-Host "    [dry-run] would run Claude Code's official installer (claude.ai/install.ps1)"
+  Write-Host "    [dry-run] would run: winget install --id Anthropic.ClaudeCode -e --accept-source-agreements --accept-package-agreements"
+  Write-Host "    [dry-run] and only if that fails, Claude Code's official installer (claude.ai/install.ps1)"
 } else {
-  Invoke-RestMethod https://claude.ai/install.ps1 | Invoke-Expression
-  Refresh-Path
-  # Claude Code's installer puts claude.exe in ~\.local\bin and leaves adding that to PATH to
-  # the person, through System Properties (measured 2026-10-10). Done here, for the User PATH, so
-  # a new window finds `claude` and nobody has to edit environment variables by hand.
-  $localBin = Join-Path $HOME ".local\bin"
-  if (Test-Path (Join-Path $localBin "claude.exe")) {
-    $userPath = [Environment]::GetEnvironmentVariable("Path", "User")
-    if (($userPath -split ";") -notcontains $localBin) {
-      [Environment]::SetEnvironmentVariable("Path", (($userPath.TrimEnd(";") + ";" + $localBin).TrimStart(";")), "User")
-      Write-Host "    added $localBin to your PATH so new windows find claude"
-      Log "added $localBin to User PATH"
-    }
+  $via = $null
+  if (Have "winget") {
+    Write-Host "    installing Claude Code with winget..."
+    winget install --id Anthropic.ClaudeCode -e --accept-source-agreements --accept-package-agreements --silent --disable-interactivity | Out-Null
+    $wingetExit = $LASTEXITCODE
+    Log "winget install Anthropic.ClaudeCode exited $wingetExit"
+    # Non-zero also means "already installed"; what counts is whether claude resolves afterwards.
     Refresh-Path
+    if (-not (Have "claude")) { $found = Find-WingetClaude; if ($found) { Add-UserPath $found } }
+    if (Have "claude") { $via = "winget" } else { Write-Host "    winget did not leave a working claude (exit $wingetExit); trying Anthropic's installer instead." }
+  } else {
+    Write-Host "    winget is not available; using Anthropic's installer instead."
   }
-  if (-not (Have "claude")) { Fail "Claude Code's installer finished but 'claude' is not on PATH." }
+  if (-not $via) {
+    # It throws on a failed download (the 2026-10-17 lock); catch it so the run ends in Fail's message.
+    try { Invoke-RestMethod https://claude.ai/install.ps1 | Invoke-Expression } catch { Log "install.ps1 failed: $_"; Write-Host "    Anthropic's installer failed: $_" }
+    Refresh-Path
+    # Claude Code's installer puts claude.exe in ~\.local\bin and leaves adding that to PATH to
+    # the person, through System Properties (measured 2026-10-10). Done here, for the User PATH, so
+    # a new window finds `claude` and nobody has to edit environment variables by hand.
+    $localBin = Join-Path $HOME ".local\bin"
+    if (Test-Path (Join-Path $localBin "claude.exe")) { Add-UserPath $localBin }
+    if (Have "claude") { $via = "Anthropic's installer (claude.ai/install.ps1)" }
+  }
+  if (-not $via) { Fail "Claude Code did not install: neither winget nor Anthropic's installer left 'claude' on PATH." }
+  Write-Host "    claude installed with $($via): $(claude --version)"
+  Log "Claude Code installed via $via"
 }
 
 Step "The install skill" "the written instructions the agent follows for the rest of the setup: one text file at $InstallSkillFile."
 if ($DryRun) {
   Write-Host "    [dry-run] would fetch $InstallSkillUrl"
 } else {
-  try { Invoke-WebRequest -UseBasicParsing -Uri $InstallSkillUrl -OutFile $InstallSkillFile } catch { Fail "could not fetch the install skill from $InstallSkillUrl ($($_.Exception.Message))" }
+  $fetched = $null; $lastError = ""
+  foreach ($u in $InstallSkillUrls) {
+    try { Invoke-WebRequest -UseBasicParsing -Uri $u -OutFile $InstallSkillFile -ErrorAction Stop; $fetched = $u; break }
+    catch {
+      $lastError = $_.Exception.Message
+      $loc = $null
+      try { $loc = $_.Exception.Response.Headers["Location"] } catch { }
+      if ($loc) {
+        try { Invoke-WebRequest -UseBasicParsing -Uri $loc -OutFile $InstallSkillFile -ErrorAction Stop; $fetched = $loc; break }
+        catch { $lastError = $_.Exception.Message }
+      }
+      Log "install skill fetch failed at ${u}: $lastError"
+    }
+  }
+  if (-not $fetched) { Fail "could not fetch the install skill from $($InstallSkillUrls -join ' or ') ($lastError)" }
+  $InstallSkillUrl = $fetched
   $head = (Get-Content $InstallSkillFile -TotalCount 20) -join "`n"
   if ($head -notmatch "install-freedom") {
     Remove-Item $InstallSkillFile -ErrorAction SilentlyContinue

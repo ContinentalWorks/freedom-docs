@@ -109,7 +109,7 @@ BANNERS=0   # set to 1 by ask_banners once the operator has been told what is co
 receipt_init() {
   [[ "$DRY_RUN" -eq 1 || -f "$RECEIPT" ]] && return 0
   {
-    echo "FREEDOM INSTALL RECEIPT"
+    echo "SUPERSUIT INSTALL RECEIPT"
     echo "Everything this setup changed on your Mac, in the order it happened."
     echo "Started $(date '+%Y-%m-%d %H:%M')."
     echo ""
@@ -139,7 +139,7 @@ receipt_add() {
 banner() {
   [[ "$BANNERS" -eq 1 ]] || return 0
   osascript -e 'on run argv' \
-    -e 'display notification (item 1 of argv) with title "Freedom install"' \
+    -e 'display notification (item 1 of argv) with title "Supersuit install"' \
     -e 'end run' -- "$1" >/dev/null 2>&1 || true
 }
 
@@ -215,7 +215,7 @@ on_fail() {
   echo "  This is normal and fixable. Copy the last twenty"
   echo "  lines of output above (and the log at $LOG_FILE)"
   echo "  and paste them into your AI chat (Claude, ChatGPT,"
-  echo "  Gemini) with the question: \"I was running the Freedom"
+  echo "  Gemini) with the question: \"I was running the Supersuit"
   echo "  bootstrap script and got this. What do I do?\""
   echo ""
   echo "  Then run this script again. It picks up where it"
@@ -271,7 +271,7 @@ freedom_mode() {
   printf '%s' "$m"
 }
 # One prompt, used by the exec at the end and by --print-handoff, so the two cannot disagree.
-HANDOFF_PROMPT="Read \$INSTALL_SKILL_FILE and follow it exactly. It is the Freedom install skill. It is run TOGETHER with the person who invited them, who should be on a call or in the room; the skill's first section asks, and if they are not, you stop there and say so, running nothing."
+HANDOFF_PROMPT="Read \$INSTALL_SKILL_FILE and follow it exactly. It is the Supersuit install skill. It is run TOGETHER with the person who invited them, who should be on a call or in the room; the skill's first section asks, and if they are not, you stop there and say so, running nothing."
 handoff_prompt() { printf '%s' "${HANDOFF_PROMPT//\$INSTALL_SKILL_FILE/$INSTALL_SKILL_FILE}"; }
 handoff_cmd() {
   printf 'claude --permission-mode %s "%s"\n' "$(freedom_mode)" "$(handoff_prompt)"
@@ -301,7 +301,7 @@ if [[ "${OS_VERSION%%.*}" -lt 13 ]]; then
 fi
 
 echo "=================================================="
-echo "  Freedom BOOTSTRAP"
+echo "  Supersuit BOOTSTRAP"
 if [[ "$DRY_RUN" -eq 1 ]]; then
   echo "  DRY RUN: nothing will be installed or changed."
 fi
@@ -389,7 +389,7 @@ step_done "Homebrew is on this Mac and your shell can find it"
 # reads as a clean "0 new" run. A fresh machine that reaches capture without it gets a
 # relationship manager that reports success and stays empty (#53, @yyabdi).
 step_begin "Node.js, Git and jq (what the harness runs on)" \
-  "installing the three building blocks Freedom itself runs on" \
+  "installing the three building blocks Supersuit itself runs on" \
   "three command line tools, installed by Homebrew" \
   "nothing you have installed yourself; if you already have any of these, they are left alone" \
   "brew uninstall node git jq"
