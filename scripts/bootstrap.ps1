@@ -84,10 +84,27 @@ function Fail([string]$why) {
   exit 1
 }
 
+# Every winget install runs through here, straight on this console, and returns its exit code (#727).
+# Until 2026-10-19 each was piped to Out-Null, which swallowed winget's own download bar: on a
+# throttled wifi the Claude Code step sat with nothing on screen and slow looked exactly like hung.
+# Merely dropping the pipe is not enough, because a native command called inside a function (or
+# whose output PowerShell collects) has its stdout read line by line, and the bar redraws itself
+# with carriage returns, so it would still not show. Start-Process -NoNewWindow hands winget this
+# console's own handles, so the bar is drawn by winget itself whatever called it. `--silent` hides
+# the package's installer window, not that bar. The Handle read before waiting is the Windows
+# PowerShell 5.1 workaround for an ExitCode that otherwise comes back empty.
+function Invoke-Winget([string[]]$wingetArgs) {
+  $exe = (Get-Command winget -ErrorAction Stop).Source
+  $p = Start-Process -FilePath $exe -ArgumentList $wingetArgs -NoNewWindow -PassThru
+  $null = $p.Handle
+  $p.WaitForExit()
+  return $p.ExitCode
+}
+
 function Winget-Install([string]$id, [string]$label) {
   if ($DryRun) { Write-Host "    [dry-run] would run: winget install --id $id"; return }
-  Write-Host "    installing $label..."
-  winget install --id $id --exact --silent --accept-package-agreements --accept-source-agreements --disable-interactivity | Out-Null
+  Write-Host "    installing $label (winget shows the download below)..."
+  $null = Invoke-Winget @("install", "--id", $id, "--exact", "--silent", "--accept-package-agreements", "--accept-source-agreements", "--disable-interactivity")
   # winget exits non-zero when the package is already present and up to date; the check that
   # matters is whether the command resolves afterwards, which the caller makes.
   Refresh-Path
@@ -135,7 +152,7 @@ if (Real-Python3) {
   $exe = Get-ChildItem -Path (Join-Path $env:LOCALAPPDATA "Programs\Python") -Filter python.exe -Recurse -Depth 1 -ErrorAction SilentlyContinue | Sort-Object FullName -Descending | Select-Object -First 1
   if (-not $exe) {
     Write-Host "    installing Python 3.12..."
-    winget install --id Python.Python.3.12 --exact --scope user --silent --accept-package-agreements --accept-source-agreements --disable-interactivity | Out-Null
+    $null = Invoke-Winget @("install", "--id", "Python.Python.3.12", "--exact", "--scope", "user", "--silent", "--accept-package-agreements", "--accept-source-agreements", "--disable-interactivity")
     $exe = Get-ChildItem -Path (Join-Path $env:LOCALAPPDATA "Programs\Python") -Filter python.exe -Recurse -Depth 1 -ErrorAction SilentlyContinue | Sort-Object FullName -Descending | Select-Object -First 1
   }
   if (-not $exe) { Fail "Python did not install (no python.exe under $env:LOCALAPPDATA\Programs\Python)." }
@@ -189,9 +206,11 @@ if (Have "claude") {
 } else {
   $via = $null
   if (Have "winget") {
-    Write-Host "    installing Claude Code with winget..."
-    winget install --id Anthropic.ClaudeCode -e --accept-source-agreements --accept-package-agreements --silent --disable-interactivity | Out-Null
-    $wingetExit = $LASTEXITCODE
+    # The biggest download of the run, and the first thing a Windows operator watches (#727): say
+    # when it started and what moving looks like, then let winget draw its own bar (Invoke-Winget).
+    Write-Host "    installing Claude Code with winget, started $(Get-Date -Format t). The download bar below shows it moving."
+    Write-Host "    On a slow connection this can take several minutes. A bar that stops for more than five means check the network."
+    $wingetExit = Invoke-Winget @("install", "--id", "Anthropic.ClaudeCode", "-e", "--accept-source-agreements", "--accept-package-agreements", "--silent", "--disable-interactivity")
     Log "winget install Anthropic.ClaudeCode exited $wingetExit"
     # Non-zero also means "already installed"; what counts is whether claude resolves afterwards.
     Refresh-Path
@@ -202,6 +221,8 @@ if (Have "claude") {
   }
   if (-not $via) {
     # It throws on a failed download (the 2026-10-17 lock); catch it so the run ends in Fail's message.
+    # It shows no download progress of its own, so say when it started and that quiet is expected.
+    Write-Host "    running Anthropic's installer, started $(Get-Date -Format t). It downloads Claude Code with nothing on screen; on a slow connection that can take several minutes."
     try { Invoke-RestMethod https://claude.ai/install.ps1 | Invoke-Expression } catch { Log "install.ps1 failed: $_"; Write-Host "    Anthropic's installer failed: $_" }
     Refresh-Path
     # Claude Code's installer puts claude.exe in ~\.local\bin and leaves adding that to PATH to
