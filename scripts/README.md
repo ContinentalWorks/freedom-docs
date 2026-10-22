@@ -1,6 +1,6 @@
 # scripts
 
-The public installers for Freedom.
+The public installers for Supersuit.
 
 `bootstrap.sh` and `preflight.sh` are **copies** of the same files in the private
 `ContinentalWorks/freedom-dev` repo, published here because the install
