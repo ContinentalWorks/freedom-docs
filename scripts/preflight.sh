@@ -114,7 +114,7 @@ check_tool() { # check_tool <cmd> <label> <version-args>
     row "$PASS" "$label" "installed (${v:-version unknown})"
     return 0
   else
-    row "$WARN" "$label" "not installed — the bootstrap script will install it"
+    row "$WARN" "$label" "not installed — ${INSTALLER:-the bootstrap script} will install it"
     return 1
   fi
 }
@@ -130,7 +130,8 @@ fi
 
 check_tool node "Node.js" --version || true
 check_tool git "Git" --version || true
-check_tool gh "GitHub CLI" --version || true
+# bootstrap.sh installs node, git and jq, not gh; install-freedom Step 1 installs gh (#850).
+INSTALLER="the install session" check_tool gh "GitHub CLI" --version || true
 
 # The Claude app is where Freedom sessions run (its Code section, opened on the workspace).
 if [[ -d "$APPS_DIR/Claude.app" ]]; then
@@ -141,14 +142,19 @@ fi
 
 check_tool claude "Claude Code" --version || true
 
-for app_check in "Granola.app|Granola" "Wispr Flow.app|Wispr Flow"; do
-  app="${app_check%%|*}"; label="${app_check##*|}"
-  if [[ -d "$APPS_DIR/$app" ]]; then
-    row "$PASS" "$label" "installed"
-  else
-    row "$WARN" "$label" "not installed — the bootstrap script will install it"
-  fi
-done
+# Neither app comes from the bootstrap script (freedom-dev#850). install-freedom installs Granola
+# during the install session (its Step 12), and leaves Wispr Flow out unless asked: voice input is
+# already in the Claude app's message box. So a missing Wispr Flow is not a warning at all.
+if [[ -d "$APPS_DIR/Granola.app" ]]; then
+  row "$PASS" "Granola" "installed"
+else
+  row "$WARN" "Granola" "not installed — the install session installs it"
+fi
+if [[ -d "$APPS_DIR/Wispr Flow.app" ]]; then
+  row "$PASS" "Wispr Flow" "installed (optional)"
+else
+  row "ℹ️ " "Wispr Flow" "optional, not installed by default — the Claude app has voice input built in"
+fi
 
 # ---------- Accounts and auth ----------
 
@@ -218,11 +224,12 @@ N=$((N + 1))
 echo "  $N. Decide your harness plan: Claude Pro (\$20/mo) or Max (\$100/mo). See"
 echo "     https://supersuit.wiki/freedom/supersuit-up-workshop/install-your-tools"
 N=$((N + 1))
-echo "  $N. Create a Wispr Flow account at https://wisprflow.ai (voice-to-text,"
-echo "     free trial then ~\$10/mo). The bootstrap installs the app; you sign in."
-N=$((N + 1))
 echo "  $N. Create a Granola account at https://granola.ai (meeting notes, free tier"
-echo "     is enough to start). The bootstrap installs the app; you sign in."
+echo "     is enough to start). The install session installs the app; you sign in."
+N=$((N + 1))
+echo "  $N. Optional: Wispr Flow (https://wisprflow.ai, voice-to-text in every app,"
+echo "     free trial then ~\$10/mo). Not installed by default: the Claude app's"
+echo "     message box already takes voice. Ask for it during the install if you want it."
 
 # ---------- Verdict ----------
 
