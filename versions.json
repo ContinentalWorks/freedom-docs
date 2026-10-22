@@ -1,6 +1,6 @@
 {
   "about": "Publish time of every Freedom release, read by installs to decide whether an update is forced or required. `critical` names releases every install must have before it continues; `updateCeiling` is how many releases behind stops Freedom (5 when absent). Written by scripts/release.sh from the ledger's Critical: and Update-Ceiling: trailers; never hand-edit.",
-  "latest": "v6.36.0",
+  "latest": "v6.38.0",
   "publishedAt": {
     "v4.304.0": "2026-09-17T20:37:43.000Z",
     "v4.303.0": "2026-09-17T00:00:00.000Z",
@@ -663,7 +663,9 @@
     "v6.33.0": "2026-10-17T09:54:25.606Z",
     "v6.34.0": "2026-10-18T09:44:05.078Z",
     "v6.35.0": "2026-10-19T06:58:12.066Z",
-    "v6.36.0": "2026-10-20T00:26:00.442Z"
+    "v6.36.0": "2026-10-20T00:26:00.442Z",
+    "v6.38.0": "2026-10-22T16:57:31.170Z",
+    "v6.37.0": "2026-10-22T00:00:00.000Z"
   },
   "critical": {}
 }

@@ -4,7 +4,7 @@ description: The public version index for Freedom. Every installed workspace pol
 
 # Freedom version index
 
-**Latest version: v6.36.0**
+**Latest version: v6.38.0**
 
 This file is public on purpose, it is deliberately thin, and its FORMAT IS FROZEN.
 
@@ -666,3 +666,5 @@ Newest last.
 ### → v6.34.0 (Pluma signs with the feather now, and still reads the dove as hers, and 24 more changes)
 ### → v6.35.0 (Supersuit Wrapped, time saved by your own numbers, and your own artifact hub)
 ### → v6.36.0 (freedom-payload --write refuses a run that would gut the manifest, and 114 more changes)
+### → v6.37.0 (unpushed-commits: a commit whose changes landed on origin under another patch is pushed, and 347 more changes)
+### → v6.38.0 (Main green again after the 784b1a51 landing batch: each red fixed at the code that tripped it, and 2 more changes)
